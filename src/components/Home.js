@@ -1,18 +1,20 @@
 import React, {Component} from 'react';
-import { Button, View } from 'react-native';
+import {Text, Button, View, StyleSheet } from 'react-native';
 
 export default class Home extends Component{
 
     // Utilizado para criar os parâmetros de rotas.
     // É possível estilizar a barra de Menu.
     static navigationOptions = {
-        title:'Home',
+        title:'                               Buraco',
         headerStyle: {
-          backgroundColor: 'darkblue'
+          backgroundColor: 'darkblue',
+          borderRadius: 40,
+          margin: 5
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight:'bold'
+            fontWeight:'bold',
         }
     }
     render() {
@@ -27,12 +29,21 @@ export default class Home extends Component{
             idade: 18
         };
         return (
-          <View>
-            <Button onPress={()=> {navigate('Tela1', {dados: pessoa})}} title="Tela 1"/>
-            <Button onPress={()=> {navigate('Tela2')}} title="Tela 2"/>
-            <Button onPress={()=> {navigate('Tela3')}} title="Tela 3"/>
-            <Button onPress={()=> {navigate('Tela4')}} title="Tela 4"/>
+          <View style={styles.botaoTela1}>
+            <Button style={styles.botaoEstilo} onPress={()=> {navigate('Tela1', {dados: pessoa})}} title="Regras"/>
+            <Text/>
+            <Text/>
+            <Button onPress={()=> {navigate('Tela2')}} title="Pontuação"/>
           </View>
         );
       }
 }
+
+const styles = StyleSheet.create({
+  botaoTela1:{
+    paddingTop: 20
+  },
+  botaoEstilo:{
+    margin:20
+  }
+})

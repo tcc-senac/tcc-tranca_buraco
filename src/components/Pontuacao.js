@@ -1,5 +1,15 @@
-import React from 'react';
-import { View, Text, TextInput, Component } from 'react-native';
+import React, { Component } from 'react';
+
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  Button,
+  TouchableHighlight,
+} from 'react-native';
 
 export default class Pontuacao extends Component {
 

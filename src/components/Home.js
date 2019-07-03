@@ -6,11 +6,9 @@ export default class Home extends Component{
     // Utilizado para criar os parâmetros de rotas.
     // É possível estilizar a barra de Menu.
     static navigationOptions = {
-        title:'                               Buraco',
+        title:'Buraco',
         headerStyle: {
           backgroundColor: 'darkblue',
-          borderRadius: 40,
-          margin: 5
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -24,26 +22,31 @@ export default class Home extends Component{
         // Basta informar o nome da rota e os dados a serem enviados.
         // EXEMPLO: "{navigate('Tela1', {dados: pessoa}".
         const {navigate} = this.props.navigation;
-        const pessoa = {
-            nome:'Gabriel Moura',
-            idade: 18
-        };
         return (
-          <View style={styles.botaoTela1}>
-            <Button style={styles.botaoEstilo} onPress={()=> {navigate('Tela1', {dados: pessoa})}} title="Regras"/>
-            <Text/>
-            <Text/>
-            <Button onPress={()=> {navigate('Tela2')}} title="Pontuação"/>
+          <View style={styles.container}>
+            <View  style={styles.box}>
+            <Button style={styles.bordaBotao} onPress={()=> {navigate('Tela1')}} title="Regras"/>
+            </View>
+           <View  style={styles.box}>
+           <Button style={styles.bordaBotao} onPress={()=> {navigate('Tela2')}} title="Pontuação"/>
+           </View>
+           
           </View>
         );
       }
 }
 
 const styles = StyleSheet.create({
-  botaoTela1:{
-    paddingTop: 20
+  container:{
+    flex:1,
+    flexDirection:'column',
+    alignItems: 'stretch',
+    padding: 20,
   },
-  botaoEstilo:{
-    margin:20
+  box:{
+    marginTop: 20,
+  },
+  bordaBotao:{
+    borderRadius: 40
   }
 })

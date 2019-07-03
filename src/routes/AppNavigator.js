@@ -19,7 +19,7 @@ const AppNavigator = createAppContainer(
         Tela2:{
             screen: Tela2
         }
-    })
+    }, {headerLayoutPreset:'center'})
 )
 
 export default AppNavigator;

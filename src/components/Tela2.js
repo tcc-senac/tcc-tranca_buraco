@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, TextInput, Text, View } from 'react-native';
-import Pontuacao from './Pontuacao';
-import Placar from './Placar';
+import Maximo from './Maximo';
+import Numero from './Numero';
 
 export default class Tela2 extends Component {
     static navigationOptions = {
@@ -17,16 +17,17 @@ export default class Tela2 extends Component {
     render() {
         return (
             <View>
-                <Pontuacao/>
-                <Placar/>
+                <Maximo/>
                 <View style={estilo.container}>
                     <View style={estilo.container2}>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Nós </Text>
+                            
                         </View>
                         <Text style={estilo.texto}> X </Text>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Elas </Text>
+                            
                         </View>
                     </View>
                 </View>

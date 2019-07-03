@@ -12,7 +12,7 @@ export default props => (
         value={props.num.toString()}
         onChangeText={(text) => {props.onChangeTextHandler(text || 0)}} 
      />
-     <Button title="Iniciar Partida"/>
+     <Button color="darkred" title="Iniciar Partida"/>
      </View>
 )
 

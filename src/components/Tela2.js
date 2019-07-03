@@ -62,7 +62,7 @@ const estilo = StyleSheet.create({
       flex: 1,
       height: 50,
       minWidth: 100,
-      backgroundColor: '#666',
+      backgroundColor: 'darkred',
       borderColor: '#999',
       borderWidth: 5,
       margin: 80,
@@ -71,7 +71,7 @@ const estilo = StyleSheet.create({
       alignSelf: 'flex-end'
     },
     texto:{
-      color: 'black',     
+      color: 'white',     
       textAlign: 'center',
       fontSize: 20,
       fontWeight: 'bold',

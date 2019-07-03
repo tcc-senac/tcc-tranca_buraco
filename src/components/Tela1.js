@@ -6,7 +6,7 @@ export default class Tela1 extends Component{
     static navigationOptions = {
         title:'REGRAS',
         headerStyle: {
-          backgroundColor: 'darkblue'
+          backgroundColor: 'darkred'
         },
         headerTintColor: '#fff',
         headerTitleStyle: {

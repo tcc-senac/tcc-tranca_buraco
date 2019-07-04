@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { StyleSheet, TextInput, Text, View } from 'react-native';
 import Maximo from './Maximo';
 import Numero from './Numero';
+import Numero1 from './Numero1';
+import Caixinha from './Caixinha';
+import Entrada from './Entrada';
+import Entrada1 from './Entrada1';
 
 export default class Tela2 extends Component {
     static navigationOptions = {
@@ -22,20 +26,17 @@ export default class Tela2 extends Component {
                     <View style={estilo.container2}>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Nós </Text>
-                            <TextInput
-                            style={estilo.bordaPontos}
-                                multiline={true}
-                                numberOfLines={4}>
-                                </TextInput>
+                            {/* <TextInput
+                                keyboardType={'numeric'}
+                                value={props.num.toString()}
+                                onChangeText={(text) => { props.onChangeTextHandler(text || 0) }}
+                            /> */}
+                            <Caixinha />
                         </View>
                         <Text style={estilo.texto}> X </Text>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Elas </Text>
-                            <TextInput
-                            style={estilo.bordaPontos}
-                                multiline={true}
-                                numberOfLines={4}>
-                                </TextInput>
+                            <Caixinha/>
                         </View>
                     </View>
                 </View>

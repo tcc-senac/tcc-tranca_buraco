@@ -4,7 +4,6 @@ import {TextInput, StyleSheet, Button, View, Text } from 'react-native';
 export default props => (
 
     <View style={styles.container}>
-        <Text style={styles.pontuacao}>Digite a pontuação máxima desta partida:</Text>
         
     <TextInput 
         style={styles.numero} 
@@ -12,7 +11,7 @@ export default props => (
         value={props.num.toString()}
         onChangeText={(text) => {props.onChangeTextHandler(text || 0)}} 
      />
-     <Button color="darkred" title="Iniciar Partida"/>
+     <Button color="darkred" title={props.nomeBotao}/>
      </View>
 )
 

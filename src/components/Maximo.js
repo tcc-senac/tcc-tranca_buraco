@@ -16,10 +16,10 @@ export default class Maximo extends Component {
 
     constructor(props){
       super(props);
-      this.state = {maximo: 0, resultado: 0, pontos: 0}
+      this.state = {maximo: 0, resultado: 0, pontos: 0, nomeBotao: props.nomeBotao }
     }
      
-    onPress = (acao) => {
+    onPress = (nomeBotao) => {
         resultado == resultado + pontos ;
       }
 
@@ -33,7 +33,7 @@ export default class Maximo extends Component {
     render() {
       return (
         <View>
-        <Entrada maximo={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
+        <Entrada nomeBotao={this.state.nomeBotao} maximo={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
         </View>
       )
     };

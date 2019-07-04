@@ -10,13 +10,13 @@ import {
   Button,
   TouchableHighlight,
 } from 'react-native';
-import Entrada1 from './Entrada1';
+import Entrada from './Entrada';
 
 export default class Caixinha extends Component {
 
     constructor(props){
       super(props);
-      this.state = {maximo: 0, resultado: 0, pontos: 0}
+      this.state = {maximo: 0, resultado: 0, pontos: 0, nomeBotao: props.nomeBotao }
     }
      
     onPress = (acao) => {
@@ -33,7 +33,7 @@ export default class Caixinha extends Component {
     render() {
       return (
         <View>
-        <Entrada1 maximo={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
+        <Entrada nomeBotao={this.state.nomeBotao} maximo={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
         </View>
       )
     };

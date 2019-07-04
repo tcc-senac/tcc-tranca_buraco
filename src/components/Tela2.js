@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, TextInput, Text, View } from 'react-native';
 import Maximo from './Maximo';
 import Numero from './Numero';
-import Numero1 from './Numero1';
 import Caixinha from './Caixinha';
 import Entrada from './Entrada';
-import Entrada1 from './Entrada1';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default class Tela2 extends Component {
     static navigationOptions = {
@@ -21,22 +20,41 @@ export default class Tela2 extends Component {
     render() {
         return (
             <View>
-                <Maximo/>
+                <Text style={estilo.inicio}>Digite a pontuação máxima</Text>
+                <Text style={estilo.inicio}>desta partida:</Text>
+                <Maximo nomeBotao="Iniciar partida!"/>
                 <View style={estilo.container}>
                     <View style={estilo.container2}>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Nós </Text>
-                            {/* <TextInput
-                                keyboardType={'numeric'}
-                                value={props.num.toString()}
-                                onChangeText={(text) => { props.onChangeTextHandler(text || 0) }}
-                            /> */}
-                            <Caixinha />
+                <Text>{resultado = resultado.toString(resultado + numero)}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{resultado = resultado + numero}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{numero}</Text>
+                            <Caixinha nomeBotao="Calcular o total" />
                         </View>
                         <Text style={estilo.texto}> X </Text>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Elas </Text>
-                            <Caixinha/>
+                         <ScrollView 
+                         style={{
+                                 width: 300,
+                                 height: 800,
+                             }}>
+                <Text>{resultado = resultado.toString(resultado + numero)}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{resultado = resultado + numero}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{resultado.toString()}</Text>
+                <Text>{numero}</Text>
+                             </ScrollView>   
+                            <Caixinha nomeBotao="Calcular o total" />
                         </View>
                     </View>
                 </View>
@@ -44,6 +62,9 @@ export default class Tela2 extends Component {
         )
     }
 }
+
+let numero = 10;
+let resultado = 0;
 
 const estilo = StyleSheet.create({
     container:{
@@ -72,11 +93,18 @@ const estilo = StyleSheet.create({
       alignSelf: 'flex-end'
     },
     texto:{
-      color: 'white',     
-      textAlign: 'center',
-      fontSize: 20,
-      fontWeight: 'bold',
-    },
+        color: 'white',     
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: 'bold',
+        margin: 10
+      },
+      inicio:{
+        color: 'darkred',     
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: 'bold',
+      },
     bordaPontos:{
         borderWidth:2,
         marginTop: 30,

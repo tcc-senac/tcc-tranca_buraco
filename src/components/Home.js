@@ -25,7 +25,7 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.box}>
-          <Button color="darkred" onPress={() => { navigate('Tela1') }} title="Regras" />
+          <Button color="darkred" onPress={() => { navigate('Tela1') }} title="Regras do Jogo" />
         </View>
         <View style={styles.box}>
           <Button color="darkred" onPress={() => { navigate('Tela2') }} title="Pontuação" />
@@ -45,5 +45,5 @@ const styles = StyleSheet.create({
   },
   box: {
     marginTop: 20,
-  }
+  },
 })

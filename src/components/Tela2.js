@@ -27,33 +27,27 @@ export default class Tela2 extends Component {
                     <View style={estilo.container2}>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Nós </Text>
-                <Text>{resultado = resultado.toString(resultado + numero)}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{resultado = resultado + numero}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{numero}</Text>
                             <Caixinha nomeBotao="Calcular o total" />
                         </View>
                         <Text style={estilo.texto}> X </Text>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Elas </Text>
-                         <ScrollView 
-                         style={{
-                                 width: 300,
-                                 height: 800,
-                             }}>
-                <Text>{resultado = resultado.toString(resultado + numero)}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{resultado = resultado + numero}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{resultado.toString()}</Text>
-                <Text>{numero}</Text>
-                             </ScrollView>   
+                            <View>
+                            <ScrollView>
+                                <Text>{resultado = resultado.toString(resultado + numero)}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{resultado = resultado + numero}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{resultado.toString()}</Text>
+                                <Text>{numero}</Text>
+                                            </ScrollView>
+                                </View>   
                             <Caixinha nomeBotao="Calcular o total" />
                         </View>
                     </View>

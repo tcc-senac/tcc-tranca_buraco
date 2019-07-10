@@ -16,13 +16,9 @@ export default class Maximo extends Component {
 
     constructor(props){
       super(props);
-      this.state = {maximo: 0, resultado: 0, pontos: 0, nomeBotao: props.nomeBotao }
+      this.state = {maximo: 0, resultado1: 0, resultado2: 0, pontos1: 0, pontos2:0, nomeBotao: props.nomeBotao }
     }
      
-    onPress = (nomeBotao) => {
-        resultado == resultado + pontos ;
-      }
-
       onChangeTextHandler = (text) => {
         this.setState({
           maximo: parseInt(text)
@@ -33,7 +29,7 @@ export default class Maximo extends Component {
     render() {
       return (
         <View>
-        <Entrada nomeBotao={this.state.nomeBotao} maximo={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
+          <Entrada nomeBotao={this.state.nomeBotao} maximo={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
         </View>
       )
     };
@@ -41,14 +37,14 @@ export default class Maximo extends Component {
 
   }
 
-let resultado = 0;
-// const [maximo, setMaximo] = useState(0);
+// let resultado1 = 0;
+// // const [maximo, setMaximo] = useState(0);
 
-function partida(pontos = 0) {
-    if (resultado < maximo) {
-        resultado = resultado + pontos
-    }
-}
+// function partida(pontos1 = 0) {
+//     if (resultado1 < maximo) {
+//         resultado1 = resultado1 + pontos1
+//     }
+// }
 
 const styles = StyleSheet.create({
   numero:{

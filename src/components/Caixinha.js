@@ -16,11 +16,11 @@ export default class Caixinha extends Component {
 
     constructor(props){
       super(props);
-      this.state = {maximo: 0, resultado: 0, pontos: 0, nomeBotao: props.nomeBotao }
+      this.state = {maximo: 0, resultado1: 0, resultado2:0, pontos1: 0, pontos2: 0, nomeBotao: props.nomeBotao }
     }
      
     onPress = (acao) => {
-        resultado == resultado + pontos ;
+        resultado == resultado + pontos1 ;
       }
 
       onChangeTextHandler = (text) => {
@@ -41,12 +41,12 @@ export default class Caixinha extends Component {
 
   }
 
-let resultado = 0;
+let resultado1 = 0;
 // const [maximo, setMaximo] = useState(0);
 
-function partida(pontos = 0) {
-    if (resultado < maximo) {
-        resultado = resultado + pontos
+function partida(pontos1 = 0) {
+    if (resultado1 < maximo) {
+        resultado1 = resultado1 + pontos1
     }
 }
 

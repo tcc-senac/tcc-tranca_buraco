@@ -5,8 +5,15 @@ import Numero from './Numero';
 import Caixinha from './Caixinha';
 import Entrada from './Entrada';
 import { ScrollView } from 'react-native-gesture-handler';
+import Placar from './Placar';
 
 export default class Tela2 extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {maximo: 0, resultado1: 0, resultado2: 0, pontos1: 0, pontos2:0, nomeBotao: props.nomeBotao }
+      }
+
     static navigationOptions = {
         title: 'Pontuação',
         headerStyle: {
@@ -27,27 +34,17 @@ export default class Tela2 extends Component {
                     <View style={estilo.container2}>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Nós </Text>
+                            <View>
+                            <Placar/>
+                            </View>
                             <Caixinha nomeBotao="Calcular o total" />
                         </View>
                         <Text style={estilo.texto}> X </Text>
                         <View style={estilo.box}>
                             <Text style={estilo.texto}> Elas </Text>
-                            <View>
-                            <ScrollView>
-                                <Text>{resultado = resultado.toString(resultado + numero)}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{resultado = resultado + numero}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{resultado.toString()}</Text>
-                                <Text>{numero}</Text>
-                                            </ScrollView>
-                                </View>   
+                            {/* <View>
+                            <Placar/>
+                                </View>    */}
                             <Caixinha nomeBotao="Calcular o total" />
                         </View>
                     </View>
@@ -57,8 +54,6 @@ export default class Tela2 extends Component {
     }
 }
 
-let numero = 10;
-let resultado = 0;
 
 const estilo = StyleSheet.create({
     container:{

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { StatusBar, Text, ScrollView, StyleSheet, View, Image } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import {KeyboardAvoidingView} from 'react-native';
 
+const limpa = require('../img/canastra_limpa.png')
+const suja = require('../img/canastra_suja.png')
+const pontuacao = require('../img/pontuacao.png')
 
 export default class Tela1 extends Component {
     static navigationOptions = {
@@ -18,6 +22,7 @@ export default class Tela1 extends Component {
 
         return (
             <ScrollView>
+                {/* <KeyboardAvoidingView disabled> */}
                 <TextInput style={styles.formato}>
                     Regras como jogar Tranca
                 </TextInput>
@@ -90,11 +95,37 @@ export default class Tela1 extends Component {
                 <TextInput style={styles.formatoTexto} multiline={true}>
                 •	Canastra - Jogo de sete cartas ou mais do mesmo valor de qualquer naipe, ou jogo de sete cartas em sequência, do mesmo naipe. Existem dois tipos de canastra:
                 </TextInput>
-                <Text style={{fontWeight:'bold'}}>
+                <TextInput style={styles.formatoTexto} multiline={true}>
                 o	Canastra limpa – Sem curinga
-                </Text>
-            </ScrollView>
-        )
+                </TextInput> 
+                <Image source={limpa}/>
+                <TextInput style={styles.formatoTexto} multiline={true}>
+                o	Canastra suja – Com curinga
+                </TextInput> 
+                <Image source={suja}/>
+                <TextInput style={styles.definicao}>
+                    O JOGO
+                </TextInput>
+                <TextInput style={styles.formatoTexto} multiline={true}>
+                O primeiro jogador compra uma carta do monte ou do lixo, verifica quais são as combinações que pode fazer com essa carta e joga fora uma que não lhe interesse. Essa carta vai para a lixeira. Após o descarte, é a vez do jogador à esquerda daquele que começou a rodada, e assim por diante. Do segundo jogador em diante, existe a opção de comprar uma carta do monte ou todas as cartas da lixeira.
+No jogo de Tranca, apenas a última carta jogada na lixeira é exibida e as demais cartas ficam ocultas. O jogador só poderá comprar o lixo se a carta que estiver no topo do lixo puder ser utilizada em algum jogo que ele tenha baixado, ou que possa ser combinada com as cartas da própria mão, formando um novo a ser baixado.
+Caso a última carta jogada na lixeira seja um 3 preto, o jogador necessariamente terá de comprar do monte.
+Após cada compra, o jogador poderá baixar um jogo antes de descartar uma carta da sua mão. O descarte significa que ele terminou sua jogada e está passando a vez para o próximo jogador. Uma vez feito o descarte, não é possível alterar a carta descartada ou modificar o seu jogo.
+O jogador que bater com as onze cartas iniciais, pegará o morto e o jogo continuará como antes. Se um jogador que já pegou um morto tornar a bater, terminará a partida. Se outra dupla ou o outro jogador não pegar o morto, serão descontados 100 pontos correspondentes ao morto, além das cartas que o jogador tiver em mãos.
+                </TextInput>
+                <TextInput style={styles.definicao}>
+                    CONTAGEM DOS PONTOS
+                </TextInput>
+                <TextInput style={styles.formatoTexto} multiline={true}>
+                Ao término da partida, somam-se os pontos na mesa, ou seja, os valores das cartas baixadas e o valor extra das canastras. Descontam-se os valores das cartas que sobraram nas mãos de cada jogador.
+                </TextInput>
+                <TextInput style={styles.formatoTexto} multiline={true}>
+                Para o jogador ou dupla que bateu, somam-se 100 pontos da batida. Caso o outro jogador ou dupla não tenha pegado o morto, diminui-se 100 pontos como penalidade. Se um jogador comprar o morto por batida indireta, e o adversário terminar a partida antes de chegar a sua vez, o morto deverá ser pago, como se não tivesse sido comprado.
+                </TextInput>
+                <Image source={pontuacao}/>
+                {/* </KeyboardAvoidingView> */}
+            </ScrollView>           
+           )
     }
 }
 

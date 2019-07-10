@@ -8,8 +8,8 @@ export default props => (
     <TextInput 
         style={styles.numero} 
         keyboardType={'numeric'} 
-        value={props.num.toString()}
-        onChangeText={(text) => {props.onChangeTextHandler(text || 0)}} 
+        value={0}
+        onChangeText={(text) => {props.onChangeTextHandler(text || 0, props.nome)}}
      />
      <Button color="darkred" title={props.nomeBotao}/>
      </View>

@@ -16,20 +16,19 @@ export default class Maximo extends Component {
 
     constructor(props){
       super(props);
-      this.state = {maximo: 0, resultado1: 0, resultado2: 0, pontos1: 0, pontos2:0, nomeBotao: props.nomeBotao }
+      this.state = { 
+        nomeBotao: props.nomeBotao,
+        num: props.num,
+        onChangeTextHandler: props.onChangeTextHandler 
+      }
     }
      
-      onChangeTextHandler = (text) => {
-        this.setState({
-          maximo: parseInt(text)
-        })
-      }
 
     
     render() {
       return (
         <View>
-          <Entrada nomeBotao={this.state.nomeBotao} maximo={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
+          <Entrada nomeBotao={this.state.nomeBotao} num={this.state.num} onChangeTextHandler={this.onChangeTextHandler} nome="maximo"/>
         </View>
       )
     };

@@ -24,12 +24,20 @@ export default class Tela2 extends Component {
             fontWeight: 'bold'
         }
     }
+
+    onChangeTextHandler = (text, nomeCampo) =>{
+      if(nomeCampo === 'maximo') {
+        this.setState({maximo: parseInt(text)})
+      }
+      
+    }
+    
     render() {
         return (
             <View>
                 <Text style={estilo.inicio}>Digite a pontuação máxima</Text>
                 <Text style={estilo.inicio}>desta partida:</Text>
-                <Maximo nomeBotao="Iniciar partida!"/>
+                <Maximo nomeBotao="Iniciar partida!" num={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
                 <View style={estilo.container}>
                     <View style={estilo.container2}>
                         <View style={estilo.box}>

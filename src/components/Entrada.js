@@ -4,7 +4,7 @@ import Numero from './Numero';
 
 export default props => (
     <View style={styles.numeros}>
-        <Numero nomeBotao={props.nomeBotao} num={props.maximo} onChangeTextHandler={props.onChangeTextHandler} nome='maximo' />
+        <Numero nomeBotao={props.nomeBotao} num={props.num} onChangeTextHandler={props.onChangeTextHandler} nome={props.nome} />
     </View>
 )
 

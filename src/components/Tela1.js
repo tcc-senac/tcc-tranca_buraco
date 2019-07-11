@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: 16,
         color: 'darkred',
         fontWeight: 'bold',
         borderWidth: 3,

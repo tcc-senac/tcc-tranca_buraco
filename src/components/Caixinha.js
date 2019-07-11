@@ -1,60 +1,10 @@
-import React, { Component, useState } from 'react';
-
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  Button,
-  TouchableHighlight,
-} from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import Entrada from './Entrada';
 
-export default class Caixinha extends Component {
+export default props => (
+    <View>
+      <Entrada nomeBotao={props.nomeBotao} num={props.num} onChangeTextHandler={props.onChangeTextHandler} nome={props.nome} />
+    </View>
+  );
 
-    constructor(props){
-      super(props);
-      this.state = {maximo: 0, resultado1: 0, resultado2:0, pontos1: 0, pontos2: 0, nomeBotao: props.nomeBotao }
-    }
-     
-    onPress = (acao) => {
-        resultado == resultado + pontos1 ;
-      }
-
-      onChangeTextHandler = (text) => {
-        this.setState({
-          maximo: parseInt(text)
-        })
-      }
-
-    
-    render() {
-      return (
-        <View>
-        <Entrada nomeBotao={this.state.nomeBotao} maximo={this.state.maximo} onChangeTextHandler={this.onChangeTextHandler}/>
-        </View>
-      )
-    };
-   
-
-  }
-
-let resultado1 = 0;
-// const [maximo, setMaximo] = useState(0);
-
-function partida(pontos1 = 0) {
-    if (resultado1 < maximo) {
-        resultado1 = resultado1 + pontos1
-    }
-}
-
-const styles = StyleSheet.create({
-  numero:{
-      width: 140,
-      height: 80,
-      fontSize: 20,
-      borderWidth: 1,
-  }
-})

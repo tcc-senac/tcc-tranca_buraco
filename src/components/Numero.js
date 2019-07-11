@@ -1,33 +1,43 @@
-import React from 'react';
-import {TextInput, StyleSheet, Button, View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { TextInput, StyleSheet, Button, View, Text } from 'react-native';
 
-export default props => (
+export default props => {
 
-    <View style={styles.container}>
-        
-    <TextInput 
-        style={styles.numero} 
-        keyboardType={'numeric'} 
-        value={0}
-        onChangeText={(text) => {props.onChangeTextHandler(text || 0, props.nome)}}
-     />
-     <Button color="darkred" title={props.nomeBotao}/>
-     </View>
-)
+    const [disabled, setDisabled] = useState(true);
+    const desabilitarCampo = () =>{
+        if(props.nome === 'maximo') {
+            setDisabled(false);
+        }
+    }
+    return (
+        <View style={styles.container}>
+
+            <TextInput
+                style={styles.numero}
+                keyboardType={'numeric'}
+                value={props.num}
+               // onChangeText={(text) => { props.onChangeTextHandler(text, props.nome) }}
+                onChangeText={(text) => { props.onChangeTextHandler(text, 'pontos1') }}
+            />
+            <Button color="darkred" title={props.nomeBotao} />
+        </View>
+    )
+
+}
 
 const styles = StyleSheet.create({
-    numero:{
+    numero: {
         width: 80,
         height: 50,
         fontSize: 20,
         borderWidth: 2,
         margin: 10
     },
-    pontuacao:{
+    pontuacao: {
         fontSize: 20,
-        color:'black'
+        color: 'black'
     },
-    container:{
+    container: {
         alignItems: 'center'
     }
 })

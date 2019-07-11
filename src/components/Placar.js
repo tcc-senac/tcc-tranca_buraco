@@ -15,9 +15,7 @@ const UselessTextInput = props => {
     }
 
 
-let maximo = 0;
 export default props => {
-
     return (
         <View style={{
             backgroundColor: this.state.text,
@@ -36,21 +34,18 @@ export default props => {
 
 }
 
-let resultado1 = 0;
-
-
-
 function placar1(pontos1) {
     if (resultado1 < maximo) {
         resultado1 = resultado1 + pontos1;
         resultado1 = resultado1.toString();
         { resultado1 }
     }
+}
 
-
-// skip these lines if using Create React Native App
-// AppRegistry.registerComponent(
-//     'AwesomeProject',
-//     () => UselessTextInputMultiline
-// )
+function placar2(pontos2) {
+    if (resultado2 < maximo) {
+        resultado2 = resultado2 + pontos2;
+        resultado2 = resultado2.toString();
+        { resultado2 }
+    }
 }

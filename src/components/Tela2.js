@@ -24,9 +24,7 @@ export default props => {
       console.log(text, nomeCampo)
       setPontos2(parseInt(text))
     }
-
   }
-
 
   return (
 

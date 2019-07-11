@@ -30,7 +30,7 @@ export default class Tela1 extends Component {
                     No jogo com dois participantes, você jogará contra a única pessoa presente na mesa. A contagem de pontos é individual.
                     Quando quatro pessoas participam, duas duplas são formadas, e uma joga contra a outra. O seu parceiro de jogo será a pessoa que estiver posicionada exatamente acima de você na mesa de jogo, com o nome dentro de uma caixa da mesma cor que a sua.
                     A distribuição das cartas é feita de forma automática e aleatória pelo nosso sistema, não havendo a intervenção de nenhum jogador ou membro da equipe Jogatina.com neste processo.
-                </TextInput>
+                    </TextInput> 
                 <TextInput editable={false}  style={styles.formatoTexto} multiline={true}>
                     •  Jogadores: 2 ou 4
                 </TextInput>
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
     formatoTexto: {
         fontSize: 15,
         fontWeight: 'bold',
+        color: 'black',
     },
     convencao: {
         flex: 1,

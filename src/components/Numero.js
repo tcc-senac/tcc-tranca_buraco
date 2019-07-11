@@ -4,11 +4,13 @@ import { TextInput, StyleSheet, Button, View, Text } from 'react-native';
 export default props => {
 
     const [disabled, setDisabled] = useState(true);
+
     const desabilitarCampo = () =>{
         if(props.nome === 'maximo') {
             setDisabled(false);
         }
     }
+
     return (
         <View style={styles.container}>
 
@@ -16,8 +18,7 @@ export default props => {
                 style={styles.numero}
                 keyboardType={'numeric'}
                 value={props.num}
-               // onChangeText={(text) => { props.onChangeTextHandler(text, props.nome) }}
-                onChangeText={(text) => { props.onChangeTextHandler(text, 'pontos1') }}
+                onChangeText={(text) => { props.onChangeTextHandler(text, props.nome) }}
             />
             <Button color="darkred" title={props.nomeBotao} />
         </View>

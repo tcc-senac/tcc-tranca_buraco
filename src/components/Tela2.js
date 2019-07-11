@@ -55,13 +55,10 @@ export default props => {
   )
 }
 
-
 const estilo = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'column',
     flexWrap: 'wrap',
-    backgroundColor: 'black',
     alignContent: 'flex-start',
     alignItems: 'center',
     marginTop: 30,
@@ -72,7 +69,6 @@ const estilo = StyleSheet.create({
     alignItems: 'center',
   },
   box: {
-    flex: 1,
     height: 50,
     minWidth: 100,
     backgroundColor: 'darkred',
@@ -91,6 +87,7 @@ const estilo = StyleSheet.create({
     margin: 10
   },
   inicio: {
+    flex: 1,
     color: 'darkred',
     textAlign: 'center',
     fontSize: 20,

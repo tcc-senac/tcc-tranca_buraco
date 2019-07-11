@@ -6,7 +6,7 @@ export default class Home extends Component {
   // Utilizado para criar os parâmetros de rotas.
   // É possível estilizar a barra de Menu.
   static navigationOptions = {
-    title: 'Buraco',
+    title: 'T R A N C A',
     headerStyle: {
       backgroundColor: 'darkred',
     },

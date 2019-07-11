@@ -121,8 +121,7 @@ O jogador que bater com as onze cartas iniciais, pegará o morto e o jogo contin
                 <TextInput editable={false}  style={styles.formatoTexto} multiline={true}>
                 Para o jogador ou dupla que bateu, somam-se 100 pontos da batida. Caso o outro jogador ou dupla não tenha pegado o morto, diminui-se 100 pontos como penalidade. Se um jogador comprar o morto por batida indireta, e o adversário terminar a partida antes de chegar a sua vez, o morto deverá ser pago, como se não tivesse sido comprado.
                 </TextInput>
-                <Image source={pontuacao}/>
-                {/* </KeyboardAvoidingView> */}
+                    <Image source={pontuacao} style={styles.imagem}/>
             </ScrollView>           
            )
     }
@@ -167,5 +166,8 @@ const styles = StyleSheet.create({
         margin: 10,
         marginTop: 20,
         fontWeight: 'bold',
-    }
+    }, 
+    imagem: {
+        alignSelf: 'center'
+    } 
 });

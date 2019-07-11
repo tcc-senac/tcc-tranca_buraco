@@ -28,7 +28,7 @@ export default props => {
 
   return (
 
-    <View>
+    <View style={estilo.comeco}>
       <Text style={estilo.inicio}>Digite a pontuação máxima</Text>
       <Text style={estilo.inicio}>desta partida:</Text>
       <Maximo nomeBotao="Iniciar partida!" num={maximo.toString()} onChangeTextHandler={onChangeTextHandler} />
@@ -86,8 +86,10 @@ const estilo = StyleSheet.create({
     fontWeight: 'bold',
     margin: 10
   },
-  inicio: {
+  <i class="fas fa-comment-exclamation    "></i>: {
     flex: 1,
+  },
+  inicio: {
     color: 'darkred',
     textAlign: 'center',
     fontSize: 20,

@@ -12,7 +12,8 @@ export default class Home extends Component {
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
-      fontWeight: 'bold',
+      fontWeight: 'bold',    
+      fontSize: 30,
     }
   }
   render() {
@@ -25,12 +26,11 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.box}>
-          <Button color="darkred" onPress={() => { navigate('Tela1') }} title="Regras do Jogo" />
+          <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela1') }} title="Regras do Jogo" />
         </View>
         <View style={styles.box}>
-          <Button color="darkred" onPress={() => { navigate('Tela2') }} title="Pontuação" />
+          <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela2') }} title="Pontuação" />
         </View>
-
       </View>
     );
   }
@@ -46,4 +46,7 @@ const styles = StyleSheet.create({
   box: {
     marginTop: 20,
   },
+  botao: {
+    fontSize: 30,
+  }
 })

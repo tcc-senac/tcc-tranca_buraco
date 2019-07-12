@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInput, StyleSheet, Button, View, Text } from 'react-native';
+import { TextInput, StyleSheet, Button, View } from 'react-native';
 
 export default props => {
 
@@ -13,12 +13,11 @@ export default props => {
 
     return (
         <View style={styles.container}>
-
             <TextInput
-                style={styles.numero}
+                style={styles.inputStyle}
                 keyboardType={'numeric'}
+                onChangeText={(text) => props.onChangeTextHandler(text || 0, props.nome)}
                 value={props.num}
-                onChangeText={(text) => { props.onChangeTextHandler(text, props.nome) }}
             />
             <Button color="darkred" title={props.nomeBotao} />
         </View>
@@ -27,12 +26,13 @@ export default props => {
 }
 
 const styles = StyleSheet.create({
-    numero: {
+    inputStyle: {
         width: 80,
         height: 50,
         fontSize: 20,
         borderWidth: 2,
-        margin: 10
+        margin: 10, 
+
     },
     pontuacao: {
         fontSize: 20,

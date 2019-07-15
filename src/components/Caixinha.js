@@ -15,7 +15,7 @@ export default props => {
     <View>
       <View style={styles.box}>
         <View>
-          <Quem />
+          <Quem jogador={props.jogador} jogadorHandler={props.jogadorHandler} jogadorValor={props.jogadorValor} />
         </View>
       </View>
       <View style={{ marginTop: 20, alignItems:'center' }}>

@@ -3,17 +3,11 @@ import { Picker, StyleSheet } from 'react-native';
 
 export default props => {
    
-    const [quem, setQuem] = useState(0);
-
-    const setarTime = (jogador) => {
-        setQuem(jogador);
-    }
-
     return (
         <Picker 
             style={styles.texto}
-            selectedValue={quem}
-            onValueChange={(jogador) => {setarTime(jogador)}}
+            selectedValue={props.jogadorValor}
+            onValueChange={(jogador) => {props.jogadorHandler(props.jogador, jogador)}}
         >
             <Picker.Item label='Nós' value={0} />
             <Picker.Item label='Eu' value={1} />

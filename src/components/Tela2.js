@@ -15,6 +15,8 @@ export default props => {
   const [pontos1, setPontos1] = useState(0);
   const [pontos2, setPontos2] = useState(0);
 
+  const [jogador, setJogador] = useState([0,0]);
+
   const [placar1, setPlacar1] = useState('0');
   const [placar2, setPlacar2] = useState('0');
 
@@ -28,8 +30,19 @@ export default props => {
     }
   }
 
+  const jogadores = (nomeCampo, value) => {
+    let escolha = jogador;
+    if(nomeCampo === 'jogador1') {
+      setJogador(escolha[0]= value);
+    } else if(nomeCampo === 'jogador2') {
+      setJogador(escolha[1]= value);
+    }
+
+
+  }
   const onClickHandler = (nome) => {
-    if(nome=== 'pontos1') {
+    if (conta < maximo){
+      if(nome=== 'pontos1') {
       const conta = resultado1 + pontos1;
       const concatenar = `${placar1} \n ${pontos1} \n ---- \n ${conta}`;
       setResultado1(conta);
@@ -39,16 +52,22 @@ export default props => {
       const concatenar = `${placar2} \n ${pontos2} \n ---- \n ${conta}`;
       setResultado2(conta);
       setPlacar2(concatenar);
+    } else if (resultado1 > resultado2){
+      // alert{`'Parabéns!'  'ganhou!'` }
+    } else {
+      // {`'Parabéns!'  'ganhou!'` }
+    }
     }
   }
+
   return (
     <View style={estilo.conteudo}>
       <Text style={estilo.inicio}>Digite a pontuação máxima</Text>
       <Text style={estilo.inicio}>desta partida:</Text>
-      <Maximo nomeBotao="Iniciar partida!" num={maximo.toString()} onChangeTextHandler={onChangeTextHandler} />
+      <Maximo nomeBotao="Iniciar partida!" num={maximo.toString()} onChangeTextHandler={onChangeTextHandler} onClickHandler={onClickHandler} />
       <View style={estilo.caixaContainer}>
         <View>
-          <Caixinha nomeBotao="Calcular o total" num={pontos1.toString()} onChangeTextHandler={onChangeTextHandler} nome='pontos1' placar={placar1} onClickHandler={onClickHandler} />
+          <Caixinha jogador='jogador1' jogadorHandler={jogadores} jogadorValor={jogador[0]} nomeBotao="Calcular o total" num={pontos1.toString()} onChangeTextHandler={onChangeTextHandler} nome='pontos1' placar={placar1} onClickHandler={onClickHandler} />
 
         </View>
         <View style={{ alignSelf: 'center' }}>
@@ -56,7 +75,7 @@ export default props => {
         </View>
 
         <View>
-          <Caixinha nomeBotao="Calcular o total" num={pontos2.toString()} onChangeTextHandler={onChangeTextHandler} nome='pontos2' placar={placar2} onClickHandler={onClickHandler} />
+          <Caixinha jogador='jogador2' jogadorHandler={jogadores} jogadorValor={jogador[1]} nomeBotao="Calcular o total" num={pontos2.toString()} onChangeTextHandler={onChangeTextHandler} nome='pontos2' placar={placar2} onClickHandler={onClickHandler} />
 
         </View> 
       </View>
@@ -65,16 +84,6 @@ export default props => {
 
   )
 }
-
-// function novaPartida(){
-//   resultado1=0;
-//   total1=0;
-//   pontos1=0;
-//   resultado2=0;
-//   total2=0;
-//   pontos2=0;
-// }
-
 
 const estilo = StyleSheet.create({
   conteudo: {

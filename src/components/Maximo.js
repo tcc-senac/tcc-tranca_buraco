@@ -10,7 +10,7 @@ export default props => {
 
   return (
     <View>
-      <Entrada nomeBotao={props.nomeBotao} num={props.num} onChangeTextHandler={props.onChangeTextHandler} nome="maximo" />
+      <Entrada nomeBotao={props.nomeBotao} num={props.num} onChangeTextHandler={props.onChangeTextHandler} nome="maximo" onClickHandler={props.onClickHandler} />
     </View>
   )
 

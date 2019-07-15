@@ -17,7 +17,17 @@ const AppNavigator = createAppContainer(
             screen: Tela1
         },
         Tela2:{
-            screen: Tela2
+            screen: Tela2,
+            navigationOptions: {
+                title: 'PONTOS',
+                headerStyle: {
+                    backgroundColor: 'darkred'
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold'
+                }
+            }
         }
     }, {headerLayoutPreset:'center'})
 )

@@ -19,12 +19,11 @@ export default props => {
                 onChangeText={(text) => props.onChangeTextHandler(text || 0, props.nome)}
                 value={props.num}
             />
-            <Button color="darkred" title={props.nomeBotao} />
+            <Button color="darkred" title={props.nomeBotao} onPress={()=> {props.onClickHandler(props.nome)}} />
         </View>
     )
 
 }
-
 const styles = StyleSheet.create({
     inputStyle: {
         width: 80,

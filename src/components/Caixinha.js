@@ -1,32 +1,48 @@
-import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import React, { useState, Component } from 'react';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
 import Entrada from './Entrada';
+import Quem from './Quem';
 
-export default props => (
-  <View>
-    <View style={estilo.box}>
-      <Text style={estilo.texto}>{props.caixaTexto}</Text>
+export default props => {
+  const placar1 = (pontos1) =>{
+    if (resultado1 < maximo || resultado2 < maximo) {
+      resultado1 = resultado1 + pontos1;
+      total1 = resultado1.toString();
+    }
+  }
+
+  return (
+    <View>
+      <View style={styles.box}>
+        <View>
+          <Quem />
+        </View>
+      </View>
+      <View style={{ marginTop: 20, alignItems:'center' }}>
+        <TextInput 
+        value={props.placar} 
+        multiline = {true}
+        numberOfLines = {1} 
+        />
+
+      </ View>
+      <View style={{ borderBottomWidth: 2 }} />
+
+      <Entrada nomeBotao={props.nomeBotao} num={props.num} onChangeTextHandler={props.onChangeTextHandler} nome={props.nome} onClickHandler={props.onClickHandler} />
     </View>
-    <Entrada nomeBotao={props.nomeBotao} num={props.num} onChangeTextHandler={props.onChangeTextHandler} nome={props.nome} />
-  </View>
-);
+  );
+};
 
-const estilo = StyleSheet.create({
-  texto: {
-    color: 'white',
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    margin: 10
-  },
+
+
+
+const styles = StyleSheet.create({
+
   box: {
     height: 50,
     minWidth: 100,
     backgroundColor: 'darkred',
     borderColor: '#999',
     borderWidth: 5,
-  },
-  // caixa: {
-  //   width: (Dimensions.get('screen').width / 2)
-  // }
+  }
 });

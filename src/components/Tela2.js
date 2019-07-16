@@ -41,7 +41,6 @@ export default props => {
 
   }
   const onClickHandler = (nome) => {
-    if (conta < maximo){
       if(nome=== 'pontos1') {
       const conta = resultado1 + pontos1;
       const concatenar = `${placar1} \n ${pontos1} \n ---- \n ${conta}`;
@@ -52,15 +51,16 @@ export default props => {
       const concatenar = `${placar2} \n ${pontos2} \n ---- \n ${conta}`;
       setResultado2(conta);
       setPlacar2(concatenar);
-    } else if (resultado1 > resultado2){
-      // alert{`'Parabéns!'  'ganhou!'` }
-    } else {
-      // {`'Parabéns!'  'ganhou!'` }
-    }
+    // } else if (resultado1 > resultado2){
+    //   // alert{`'Parabéns!'  'ganhou!'` }
+    // } else {
+    //   // {`'Parabéns!'  'ganhou!'` }
+    // }
     }
   }
 
   return (
+    <ScrollView>
     <View style={estilo.conteudo}>
       <Text style={estilo.inicio}>Digite a pontuação máxima</Text>
       <Text style={estilo.inicio}>desta partida:</Text>
@@ -79,9 +79,12 @@ export default props => {
 
         </View> 
       </View>
-       <Button title='Nova Partida' onChangeTextHandler={onChangeTextHandler} />
+      <View style={estilo.botaoContainer}>
+      <Button color="darkred" title='Nova Partida' onChangeTextHandler={onChangeTextHandler} />
+      </View>
+      
     </View>
-
+    </ScrollView>
   )
 }
 
@@ -118,4 +121,10 @@ const estilo = StyleSheet.create({
     fontWeight: 'bold',
     
   },
+  botaoContainer: {
+    margin: 20,
+    marginLeft: 120,
+    marginRight: 120,
+    
+  }
 })

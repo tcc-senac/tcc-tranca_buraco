@@ -90,7 +90,7 @@ export default props => {
 
 const estilo = StyleSheet.create({
   conteudo: {
-    flex: 1,   
+    flex: 1, 
   },
   box: {
     height: 100,

@@ -7,7 +7,6 @@ import Numero from './Numero';
 import Entrada from './Entrada';
 import Quem from './Quem';
 
-
 export default props => {
   const [maximo, setMaximo] = useState(0);
   const [resultado1, setResultado1] = useState(0);
@@ -31,13 +30,12 @@ export default props => {
   }
 
   const jogadores = (nomeCampo, value) => {
-    let escolha = jogador;
+      let escolha = jogador;
     if(nomeCampo === 'jogador1') {
       setJogador(escolha[0]= value);
     } else if(nomeCampo === 'jogador2') {
       setJogador(escolha[1]= value);
     }
-
 
   }
   const onClickHandler = (nome) => {
@@ -59,30 +57,38 @@ export default props => {
     }
   }
 
+  // limpatela(){
+  //   this.maximo.clear();
+  //   this.resultado1.clear();
+  //   this.resultado2.clear();
+  //   this.pontos1.clear();
+  //   this.pontos2.clear();
+  //   this.placar1.clear();
+  //   this.maximo.clear();
+  //   this.placar2.clear();
+  // }
+  
   return (
     <ScrollView>
     <View style={estilo.conteudo}>
-      <Text style={estilo.inicio}>Digite a pontuação máxima</Text>
-      <Text style={estilo.inicio}>desta partida:</Text>
+    <Text style={estilo.inicio}>Pontuação máxima</Text>
+      <Text style={estilo.inicio}>para esta partida:</Text>
       <Maximo nomeBotao="Iniciar partida!" num={maximo.toString()} onChangeTextHandler={onChangeTextHandler} onClickHandler={onClickHandler} />
       <View style={estilo.caixaContainer}>
         <View>
           <Caixinha jogador='jogador1' jogadorHandler={jogadores} jogadorValor={jogador[0]} nomeBotao="Calcular o total" num={pontos1.toString()} onChangeTextHandler={onChangeTextHandler} nome='pontos1' placar={placar1} onClickHandler={onClickHandler} />
-
         </View>
         <View style={{ alignSelf: 'center' }}>
           <Text style={estilo.texto}>X</Text>
         </View>
-
         <View>
           <Caixinha jogador='jogador2' jogadorHandler={jogadores} jogadorValor={jogador[1]} nomeBotao="Calcular o total" num={pontos2.toString()} onChangeTextHandler={onChangeTextHandler} nome='pontos2' placar={placar2} onClickHandler={onClickHandler} />
-
         </View> 
       </View>
       <View style={estilo.botaoContainer}>
-      <Button color="darkred" title='Nova Partida' onChangeTextHandler={onChangeTextHandler} />
+      {/* <Button color="darkred" title='Nova Partida' onPress={this.limpatela()} /> */}
+      <Button color="darkred" title='Nova Partida' />
       </View>
-      
     </View>
     </ScrollView>
   )
@@ -101,7 +107,6 @@ const estilo = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around'
-    
   },
   inicio: {
     color: 'darkred',
@@ -119,12 +124,10 @@ const estilo = StyleSheet.create({
     color: 'darkred',
     fontSize: 20,
     fontWeight: 'bold',
-    
   },
   botaoContainer: {
     margin: 20,
     marginLeft: 120,
     marginRight: 120,
-    
   }
-})
+});

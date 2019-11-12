@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Text, Button, View, StyleSheet } from 'react-native';
+import { Text, Button, View, StyleSheet, Image } from 'react-native';
+
+const IconeApp = require('../img/IconeApp.png')
 
 export default class Home extends Component {
 
   // Utilizado para criar os parâmetros de rotas.
   // É possível estilizar a barra de Menu.
   static navigationOptions = {
-    title: 'T R A N C A',
+    title: '',
     headerStyle: {
       backgroundColor: 'darkred',
     },
@@ -25,11 +27,12 @@ export default class Home extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
+       <Image source={IconeApp} style={styles.imagem} />
         <View style={styles.box}>
           <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela1') }} title="Regras do Jogo" />
         </View>
         <View style={styles.box}>
-          <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela2') }} title="Pontuação" />
+          <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela2') }} title="Marcar Pontos DUPLA" />
         </View>
       </View>
     );
@@ -41,12 +44,17 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'stretch',
-    padding: 20,
+    padding: 30,
   },
   box: {
-    marginTop: 20,
+    marginTop: 40,
+    height: 60,
   },
   botao: {
-    fontSize: 30,
-  }
+    fontSize: 36,
+    height: 60
+  },
+  imagem: {
+    alignSelf: 'center',
+}
 })

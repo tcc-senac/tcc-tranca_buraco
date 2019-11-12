@@ -19,7 +19,7 @@ const AppNavigator = createAppContainer(
         Tela2:{
             screen: Tela2,
             navigationOptions: {
-                title: 'PONTOS',
+                title: 'MARCAR PONTOS',
                 headerStyle: {
                     backgroundColor: 'darkred'
                 },

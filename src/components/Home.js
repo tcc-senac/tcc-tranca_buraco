@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Button, View, StyleSheet, Image } from 'react-native';
+import { Text, Button, View, ScrollView, StyleSheet, Image } from 'react-native';
 
 const IconeApp = require('../img/IconeApp.png')
 
@@ -26,7 +26,8 @@ export default class Home extends Component {
     // EXEMPLO: "{navigate('Tela1', {dados: pessoa}".
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <ScrollView>
+        <View style={styles.container}>
        <Image source={IconeApp} style={styles.imagem} />
         <View style={styles.box}>
           <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela1') }} title="Regras do Jogo" />
@@ -35,6 +36,8 @@ export default class Home extends Component {
           <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela2') }} title="Marcar Pontos DUPLA" />
         </View>
       </View>
+      </ScrollView>
+      
     );
   }
 }

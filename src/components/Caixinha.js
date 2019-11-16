@@ -37,10 +37,10 @@ export default props => {
 
 
 const styles = StyleSheet.create({
-
   box: {
     height: 50,
-    minWidth: 100,
+    minWidth: 60,
+    width: 80,
     backgroundColor: 'darkred',
     borderColor: '#999',
     borderWidth: 5,

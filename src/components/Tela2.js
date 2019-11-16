@@ -71,17 +71,16 @@ export default props => {
   return (
     <ScrollView>
     <View style={estilo.conteudo}>
-    <Text style={estilo.inicio}>Pontuação máxima</Text>
-      <Text style={estilo.inicio}>para esta partida:</Text>
+    <Text style={estilo.inicio}>Pontuação máxima:</Text>
       <Maximo nomeBotao="Iniciar partida!" num={maximo.toString()} onChangeTextHandler={onChangeTextHandler} onClickHandler={onClickHandler} />
       <View style={estilo.caixaContainer}>
-        <View>
+        <View style={estilo.calculartotal} > 
           <Caixinha jogador='jogador1' jogadorHandler={jogadores} jogadorValor={jogador[0]} nomeBotao="Calcular o total" num={pontos1.toString()} onChangeTextHandler={onChangeTextHandler} nome='pontos1' placar={placar1} onClickHandler={onClickHandler} />
         </View>
         <View style={{ alignSelf: 'center' }}>
           <Text style={estilo.texto}>X</Text>
         </View>
-        <View>
+        <View style={estilo.calculartotal} > 
           <Caixinha jogador='jogador2' jogadorHandler={jogadores} jogadorValor={jogador[1]} nomeBotao="Calcular o total" num={pontos2.toString()} onChangeTextHandler={onChangeTextHandler} nome='pontos2' placar={placar2} onClickHandler={onClickHandler} />
         </View> 
       </View>
@@ -111,23 +110,29 @@ const estilo = StyleSheet.create({
   inicio: {
     color: 'darkred',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   bordaPontos: {
     borderWidth: 2,
     marginTop: 30,
     height: 50,
-    fontSize: 20
+    fontSize: 14
   },
   texto: {
     color: 'darkred',
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: 'bold',
   },
+  calculartotal: {
+    maxWidth: 100,
+    minWidth: 100,
+  }, 
   botaoContainer: {
     margin: 20,
-    marginLeft: 120,
-    marginRight: 120,
-  }
-});
+    maxWidth: 160,
+    minWidth: 160,
+    textAlign: 'center',
+    alignSelf: 'center',
+  },
+  });

@@ -161,14 +161,15 @@ export default class Tela1 extends Component {
 
 const styles = StyleSheet.create({
     formatoTexto: {
-        fontSize: 15,        
+        fontSize: 18,        
         textAlign: 'auto',
+        lineHeight: 24,
         color: 'black',
         marginLeft: 20,
         marginRight: 20,
     },
     formatoTitulo: {
-        fontSize: 15,
+        fontSize: 18,
         fontWeight: 'bold',
         textAlign: 'center',
         flex: 1,
@@ -178,7 +179,7 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     formatoRodape: {
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: 'bold',
         color: 'black',
     },

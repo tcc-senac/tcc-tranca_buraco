@@ -58,9 +58,9 @@ export default class TelaJogo extends Component{
         return(
             <ScrollView>
             <View style={styles.container}>
-            <Text style={{ textAlign: "center", fontSize: 20, color: 'darkred' }}>Definir a</Text>
-            <Text style={{ textAlign: "center", fontSize: 20, color: 'darkred' }}>PONTUAÇÃO MÁXIMA</Text>
-            <Text style={{ textAlign: "center", fontSize: 20, color: 'darkred' }}>para esta partida</Text>                
+            <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred', lineHeight: 18, marginTop: 10 }}>Definir a</Text>
+            <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred', fontWeight:'bold', lineHeight: 18  }}>PONTUAÇÃO MÁXIMA</Text>
+            <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred', lineHeight: 18 }}>para esta partida</Text>                
                 <TextInput onChangeText={(txt) => this.setState({ 
                         inputMaxima: txt, 
                         pontuacaoMaxima: parseInt(txt), 
@@ -72,11 +72,11 @@ export default class TelaJogo extends Component{
                     keyboardType="numeric"   
                     editable={this.state.maximoDisabled}                 
                 />
-                <Text style={{ textAlign: "center", fontSize: 20, color: 'darkred' }}>Clicar em INICIAR</Text>
+                <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred' }}>Clicar em INICIAR</Text>
 
                 <Button txt="INICIAR" onPress={() => this.setState({ maximoDisabled: false })}/>
 
-                <Text style={{ textAlign: "center", fontSize: 20, color: 'darkred', padding: 0, margin: 10, marginBottom: 0 }}>Definir os jogadores</Text>
+                <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred', padding: 0, margin: 10, marginBottom: 0 }}>Definir os jogadores</Text>
                 <View style={styles.containerPontuacao}>
                     <View style={styles.containerJogador1}>
                         <CustomPicker selectedValue={this.state.apelidoJogador1} onValueChange={(itemValue, itemIndex) => this.setState({apelidoJogador1: itemValue})} />
@@ -88,7 +88,7 @@ export default class TelaJogo extends Component{
                         }
 
                         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }}/>
-                        <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold'  }}>TOTAL: {this.state.pontosJogador1}</Text>
+                        <Text style={{ textAlign: 'center', color: 'darkred', fontWeight: 'bold'  }}>TOTAL: {this.state.pontosJogador1}</Text>
                         <TextInput onChangeText={(txt) => {
                                 this.setState({ inputJogador1: parseInt(txt) }); 
                             }}
@@ -191,7 +191,7 @@ export default class TelaJogo extends Component{
                         }
                         
                         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }}/>
-                        <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold' }}>TOTAL: {this.state.pontosJogador2}</Text>
+                        <Text style={{ textAlign: 'center', color: 'darkred', fontWeight: 'bold' }}>TOTAL: {this.state.pontosJogador2}</Text>
                         <TextInput onChangeText={(txt) => {
                                 this.setState({ inputJogador2: parseInt(txt) }); 
                             }} 

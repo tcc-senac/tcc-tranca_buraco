@@ -8,14 +8,14 @@ export default class Home extends Component {
   // Utilizado para criar os parâmetros de rotas.
   // É possível estilizar a barra de Menu.
   static navigationOptions = {
-    title: '',
+    title: ' ',
     headerStyle: {
       backgroundColor: 'darkred',
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
       fontWeight: 'bold',    
-      fontSize: 30,
+      fontSize: 10,
     }
   }
   render() {

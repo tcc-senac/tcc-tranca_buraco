@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
+import { grey } from 'ansi-colors';
 
 const styles = StyleSheet.create({
     input: {
@@ -8,8 +9,9 @@ const styles = StyleSheet.create({
         borderWidth: 1, 
         height: 45,
         width: 100,
-        color: 'black',
-        alignSelf: 'center'
+        fontSize: 18,
+        alignSelf: 'center',
+        textAlign: 'center',
     },
     container: {
         paddingHorizontal: 20
@@ -17,7 +19,7 @@ const styles = StyleSheet.create({
     containerPontuacao: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 30
+        marginTop: 8
     },
     containerJogador1: {
         width: '40%',

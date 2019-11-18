@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, Button, View, ScrollView, StyleSheet, Image } from 'react-native';
 
-const IconeApp = require('../img/IconeApp.png')
+const IconeApp = require('../../img/IconeApp.png')
 
 export default class Home extends Component {
 
@@ -30,10 +30,10 @@ export default class Home extends Component {
         <View style={styles.container}>
        <Image source={IconeApp} style={styles.imagem} />
         <View style={styles.box}>
-          <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela1') }} title="Regras do Jogo" />
+          <Button style={styles.botao} color="darkred" onPress={() => { navigate('RegrasJogo') }} title="REGRAS TRANCA" />
         </View>
         <View style={styles.box}>
-          <Button style={styles.botao} color="darkred" onPress={() => { navigate('Tela2') }} title="Marcar Pontos DUPLA" />
+          <Button style={styles.botao} color="darkred" onPress={() => { navigate('TelaJogo') }} title="MARCAR PONTOS" />
         </View>
       </View>
       </ScrollView>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   box: {
     marginTop: 40,
-    height: 60,
+    height: 30,
   },
   botao: {
     fontSize: 36,

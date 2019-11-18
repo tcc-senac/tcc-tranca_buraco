@@ -3,13 +3,13 @@ import { StatusBar, Text, ScrollView, StyleSheet, View, Image } from 'react-nati
 import { TextInput } from 'react-native-gesture-handler';
 import { KeyboardAvoidingView } from 'react-native';
 
-const limpa = require('../img/canastra_limpa.png')
-const suja = require('../img/canastra_suja.png')
-const pontuacao = require('../img/pontuacao.png')
-const tranca = require('../img/IconeTranca.png')
-const curinga = require('../img/curinga.png')
-const seguida = require('../img/ImgSeguidaLimpa.png')
-const trinca = require('../img/ImgTrinca.png')
+const limpa = require('../../img/canastra_limpa.png')
+const suja = require('../../img/canastra_suja.png')
+const pontuacao = require('../../img/pontuacao.png')
+const tranca = require('../../img/IconeTranca.png')
+const curinga = require('../../img/curinga.png')
+const seguida = require('../../img/ImgSeguidaLimpa.png')
+const trinca = require('../../img/ImgTrinca.png')
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 const V = (props) => <Text style={{color: 'red'}}> {props.children}</Text>
 
@@ -179,8 +179,7 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     formatoRodape: {
-        fontSize: 12,
-        fontWeight: 'bold',
+        fontSize: 10,
         color: 'black',
     },
     imagem: {

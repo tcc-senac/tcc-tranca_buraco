@@ -106,7 +106,7 @@ export default class TelaJogo extends Component{
                                 }
 
                                 if(this.state.inputJogador1 == '') {
-                                    Alert.alert("Por favor preencha a pontuação do jogador 1");
+                                    Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador1);
                                     return;
                                 }
 
@@ -209,7 +209,7 @@ export default class TelaJogo extends Component{
                                 }
 
                                 if(this.state.inputJogador2 == '') {
-                                    Alert.alert("Por favor preencha a pontuação do jogador 2");
+                                    Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador2);
                                     return;
                                 }
 

@@ -83,7 +83,7 @@ export default class Tela1 extends Component {
                    <B>3 de naipe preto (3 de espadas e 3 de paus):</B> Não podem ser utilizados em nenhum jogo. Quando um 3 preto é jogado no LIXO, ele o TRANCA, ou seja, impede que o próximo jogador compre o LIXO, sendo obrigado a comprar uma carta do MONTE.
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
-                    <B>3 de naipe vermelho (<V>3 de copas</V> e <V>3 de ouros</V>):</B> Devem ser baixados sozinhos na mesa e valem 100 pontos positivos se o jogador, ou dupla, fizer pelo menos uma CANASTRA LIMPA ou SUJA. Se não houver nenhuma canastra os 3s valem 100 pontos negativos na contagem dos pontos daquela mão.
+                    <B> <V>3</V> de <V>naipe vermelho </V>(<V>3 de copas</V> e <V>3 de ouros</V>):</B> Devem ser baixados sozinhos na mesa e valem 100 pontos positivos se o jogador, ou dupla, fizer pelo menos uma CANASTRA LIMPA ou SUJA. Se não houver nenhuma canastra os 3s valem 100 pontos negativos na contagem dos pontos daquela mão.
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
                     <B>Jokers:</B> Nenhum dos 4 são utilizados na Tranca. 

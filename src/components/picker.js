@@ -15,7 +15,7 @@ return(
     }}
     selectedValue={selectedValue}
     onValueChange={onValueChange}>
-        <Picker.Item label="▼ definir jogador(es)" value="Jogador" />
+        <Picker.Item label="▼ definir jogador(es)" value="" />
         <Picker.Item label="Ela" value="Ela" />
         <Picker.Item label="Elas" value="Elas" />
         <Picker.Item label="Ele" value="Ele" />

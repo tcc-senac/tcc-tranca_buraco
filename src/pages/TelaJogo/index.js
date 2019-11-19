@@ -70,7 +70,7 @@ export default class TelaJogo extends Component{
                     value={this.state.inputMaxima} 
                     style={styles.input}
                     keyboardType="numeric"   
-                    editable={this.state.maximoDisabled}                 
+                    editable={this.state.maximoDisabled}  
                 />
                 <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred' }}>Clicar em INICIAR</Text>
 
@@ -105,6 +105,7 @@ export default class TelaJogo extends Component{
                                     return;
                                 }
 
+                                //NÃO COMPUTA O CAMPO VAZIO  
                                 if(this.state.inputJogador1 == '') {
                                     Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador1);
                                     return;
@@ -208,6 +209,7 @@ export default class TelaJogo extends Component{
                                     return;
                                 }
 
+                                //NÃO COMPUTA O CAMPO VAZIO  
                                 if(this.state.inputJogador2 == '') {
                                     Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador2);
                                     return;
@@ -277,6 +279,8 @@ export default class TelaJogo extends Component{
                         }/>
                     </View>
                 </View>
+
+                {/* POG */}
                 <Text>  </Text>
                 <Text>  </Text>
                 <Button txt="NOVA PARTIDA" onPress={ () => this.resetarJogo() } />

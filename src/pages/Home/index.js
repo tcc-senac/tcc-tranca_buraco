@@ -35,7 +35,9 @@ export default class Home extends Component {
         <View style={styles.box}>
           <Button style={styles.botao} color="darkred" onPress={() => { navigate('RegrasJogo') }} title="REGRAS TRANCA" />
         </View>
-        
+        <View style={styles.box}>
+          <Button style={styles.botao} color="darkred" onPress={() => { navigate('RegrasBuraco') }} title="REGRAS BURACO" />
+        </View>        
       </View>
       </ScrollView>
       

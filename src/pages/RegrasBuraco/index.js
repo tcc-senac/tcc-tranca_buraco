@@ -47,7 +47,7 @@ export default class RegrasBuraco extends Component {
                     Cartas
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
-                    Dois baralhos com 52 cartas cada. Dois sets de cartas de A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K de cada naipe, e mais dois curingões.
+                    Dois baralhos com 52 cartas cada. Dois sets de cartas de A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K de cada naipe, e mais dois curingões de cada set.
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
                     Há quatro naipes no baralho: 
@@ -80,11 +80,11 @@ export default class RegrasBuraco extends Component {
                     Definições
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
-                    <B>Jokers:</B> Os 4 são utilizados como curinga, no lugar de uma carta, tanto na seguida, como na trinca. 
+                    <B>Curingas (<V>2 de copas</V>, 2 de espadas, <V>2 de ouros</V>, e 2 de paus):</B> O número dois é utilizado como curinga, de qualquer naipe, podendo substituir qualquer carta. O jogo quando é baixado com um curinga é chamado de “sujo”. Na Tranca o jogo sujo permanece sujo até o final. Não há nenhuma situação em que a carta que foi baixada na mesa volte para a mão de nenhum dos jogadores. 
                 </TextInput>
                 <Image source={curinga} style={styles.imagem} />
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
-                    <B>Curingas (<V>2 de copas</V>, 2 de espadas, <V>2 de ouros</V>, e 2 de paus):</B> O número dois é utilizado como curinga, de qualquer naipe, podendo substituir qualquer carta. O jogo quando é baixado com um curinga é chamado de “sujo”. Na Tranca o jogo sujo permanece sujo até o final. Não há nenhuma situação em que a carta que foi baixada na mesa volte para a mão de nenhum dos jogadores. 
+                    <B>Jokers:</B> Os 4 são utilizados como curinga, no lugar de uma carta, tanto na seguida, como na trinca. 
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
                     <B>Canastras:</B> Quando o jogo completa sete cartas, ou mais, é chamado de canastra. Se não tiver curinga é uma “canastra limpa”: 
@@ -107,7 +107,7 @@ export default class RegrasBuraco extends Component {
                     <B>Morto:</B> No caso de jogo com 2 participantes, cada jogador recebe o morto após a primeira batida. Se for jogo em duplas, só recebe o primeiro da dupla a bater, a primeira vez, é um morto de cada dupla. Se forem três jogadores, só os dois primeiros que baterem pegam o morto. Quem não pegar o morto tem que pagar 100 pontos no final da mão. Para pegar o morto não é necessário ter canastra, somente descer todas as cartas da mão. No caso de terminar as cartas do monte de compras, mas ninguém tiver batido, é colocado um morto de cada vez, até que alguém bata, ou terminem as cartas do monte, e não haja mais mortos para colocar no monte.
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
-                    <B>Seguidas:</B> jogos com três ou mais cartas do mesmo naipe, em ordem crescente, na ordem: 4, 5, 6, 7, 8, 9, 10, J, Q, K e A, podendo qualquer carta ser substituída por um curinga. O mínimo de cartas para descer um jogo é três, mas outras cartas serão acrescentadas no decorrer da mão.
+                    <B>Seguidas:</B> jogos com três ou mais cartas do mesmo naipe, em ordem crescente, na ordem: A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K e A, podendo qualquer carta ser substituída por um curinga. O mínimo de cartas para descer um jogo é três, mas outras cartas serão acrescentadas no decorrer da mão.
                     </TextInput>
                 <Image source={seguida} style={styles.imagem} />
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
@@ -130,7 +130,7 @@ export default class RegrasBuraco extends Component {
                     Após cada compra, o jogador poderá baixar um jogo (combinação de cartas, formando uma sequência ou trinca), ou colocar carta(s) nos seus jogos ou de seu parceiro. O jogador não pode voltar atrás e subir cartas colocadas no(s) jogo(s) da mesa, a não ser que tenha acontecido um engano e a carta “não cabe” no jogo.
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
-                    Do segundo jogador em diante, existe a opção entre a compra de uma carta do MONTE ou de todas as cartas do LIXO, no caso de não estar trancado com um três preto. Para comprar o LIXO, o jogador obrigatoriamente terá que justificar a compra da carta de cima, encaixando-a diretamente em um jogo na mesa, ou juntando com duas cartas (ou mais) da mão e baixando como um novo jogo.
+                    Do segundo jogador em diante, existe a opção entre a compra de uma carta do MONTE ou de todas as cartas do LIXO. Para comprar o LIXO, o jogador obrigatoriamente terá que justificar a compra da carta de cima, juntando com duas cartas (ou mais) da mão e baixando como um novo jogo, ou colocando em um jogo já existente.
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
                     O jogador, ou no caso de uma dupla, o primeiro jogador que bater pegará o MORTO, e o jogo continuará como antes. Não é necessário canastra para pegar o MORTO. No jogo de parceria, cada morto corresponde a uma dupla. 
@@ -139,9 +139,38 @@ export default class RegrasBuraco extends Component {
                     Após a batida final se dá o término da MÃO. Somam-se os pontos das mão de cada jogador, e desconta-se este valor das cartas dos jogos na mesa. Se algum jogador, ou dupla, não tenha pego o MORTO, diminui-se 100 pontos como penalidade. Se o MORTO não tiver sido usado (batida indireta) diminui-se 100 pontos como penalidade. Depois se conta quantas canastras, limpas ou sujas, e quantos 3s cada jogador ou dupla tem, e anota-se o primeiro valor. Na sequencia é contada a quantidade de cartas dos jogos. Este valor é somado ao primeiro. A partida termina quando o jogador, ou dupla, conseguir(em) ultrapassar o valor estipulado para a partida.
                 </TextInput>
                 <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
-                    Se o jogador que já pegou o MORTO, ou a dupla onde um jogador já o pegou, tornar a bater, terminará a MÃO, mas para bater é preciso de pelo menos uma canastra limpa. Se a outra dupla, ou jogador, não pegar o MORTO, deverá descontar 100 pontos correspondentes ao MORTO, além das cartas que tem em mãos. Se tiver baixado três vermelho e tiver canastra, soma-se 100 pontos para cada 3 vermelho, e se não tiver canastra, deduz-se 100 pontos para cada 3 vermelho baixado. Deduz-se 100 pontos para cada 3 preto que estiver na mão.
+                    Se o jogador que já pegou o MORTO, ou a dupla onde um jogador já o pegou, tornar a bater, terminará a MÃO, mas para bater é preciso de pelo menos uma canastra limpa. Se a outra dupla, ou jogador, não pegar o MORTO, deverá descontar 100 pontos correspondentes ao MORTO, além das cartas que tem em mãos. 
                 </TextInput>
-                <Image source={pontuacao} style={styles.imagem} />
+                <TextInput 
+                    editable={false}  
+                    style={styles.formatoTitulo} 
+                    multiline={true}>
+                    Contando os pontos 
+                </TextInput>
+                <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
+                    <B>Curingão</B> vale 20 pontos, 
+                </TextInput>
+                <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
+                    <B>A</B> vale 15 pontos,
+                </TextInput>
+                <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
+                    <B>2, 8, 9, 10, J, Q, K </B>valem 10 pontos cada,
+                </TextInput>
+                <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
+                    <B>3, 4, 5, 6, 7</B> valem 5 pontos cada,
+                </TextInput>
+                <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
+                    O <B>morto</B> vale 100 pontos, para quem não o utilizou,
+                </TextInput>
+                <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
+                    Cada <B>canastra limpa</B> vale 200 pontos,
+                </TextInput>
+                <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
+                   Cada <B>canastra suja</B> vale 100 pontos, e a
+                    </TextInput>
+                <TextInput editable={false} style={styles.formatoTexto} multiline={true}>
+                    <B>Batida final</B> vale 100 pontos
+                </TextInput>
                 <TextInput editable={false} style={styles.formatoRodape}>
                     Fonte:
                 </TextInput>

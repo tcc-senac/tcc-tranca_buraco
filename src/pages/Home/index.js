@@ -30,8 +30,11 @@ export default class Home extends Component {
         <View style={styles.container}>
        <Image source={IconeApp} style={styles.imagem} />
        <View style={styles.box}>
-          <Button style={styles.botao} color="darkred" onPress={() => { navigate('TelaJogo') }} title="MARCAR PONTOS" />
+          <Button style={styles.botao} color="darkred" onPress={() => { navigate('TelaJogo') }} title="MARCAR PONTOS DUPLA" />
         </View>
+        {/* <View style={styles.box}>
+          <Button style={styles.botao} color="darkred" onPress={() => { navigate('PontosTrio') }} title="MARCAR PONTOS TRIO" />
+        </View> */}
         <View style={styles.box}>
           <Button style={styles.botao} color="darkred" onPress={() => { navigate('RegrasJogo') }} title="REGRAS TRANCA" />
         </View>

@@ -16,7 +16,7 @@ const button = (props) =>
                 justifyContent: 'center',
                 backgroundColor: 'darkred',
                 borderColor: 'grey',
-                borderWidth: 4,
+                // borderWidth: 4,
             }}
         >
             <Text style={{

@@ -7,8 +7,6 @@ import RegrasJogo from "./pages/RegrasJogo";
 import TelaJogo from "./pages/TelaJogo";
 import RegrasBuraco from "./pages/RegrasBuraco";
 
-
-
 const AppNavigator = createStackNavigator({
     Home: {
         screen: Home

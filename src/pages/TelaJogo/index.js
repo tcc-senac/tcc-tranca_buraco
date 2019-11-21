@@ -72,7 +72,7 @@ export default class TelaJogo extends Component{
                     keyboardType="numeric"   
                     editable={this.state.maximoDisabled}  
                 />
-                <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred' }}>Clicar em INICIAR</Text>
+                <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred' }}>Clicar 2 vezes em INICIAR</Text>
 
                 <Button txt="INICIAR" onPress={() => this.setState({ maximoDisabled: false })}/>
 

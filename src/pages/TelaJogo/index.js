@@ -97,7 +97,7 @@ export default class TelaJogo extends Component{
                             keyboardType="phone-pad"   
                         />
 
-                        <Button txt="Somar os pontos" onPress={() => {
+                        <Button txt="Somar pontos" onPress={() => {
 
                                 //VERIFICA SE EXISTE PONTUAÇÃO MAXIMA
                                 if (this.state.pontuacaoMaxima == 0) {
@@ -201,7 +201,7 @@ export default class TelaJogo extends Component{
                             keyboardType="phone-pad"
                         />
 
-                        <Button txt="Somar os pontos" onPress={() => {
+                        <Button txt="Somar pontos" onPress={() => {
 
                                 //VERIFICA SE EXISTE PONTUAÇÃO MAXIMA
                                 if (this.state.pontuacaoMaxima == 0) {

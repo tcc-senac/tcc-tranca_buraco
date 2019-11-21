@@ -106,7 +106,7 @@ export default class PontosTrio extends Component{
                                 }
 
                                 //NÃO COMPUTA O CAMPO VAZIO  
-                                if(this.state.inputJogador1 == '') {
+                                if(this.state.inputJogador1 == '' && this.state.inputJogador1 !== 0) {
                                     Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador1);
                                     return;
                                 }
@@ -210,7 +210,8 @@ export default class PontosTrio extends Component{
                                 }
 
                                 //NÃO COMPUTA O CAMPO VAZIO  
-                                if(this.state.inputJogador2 == '') {
+                                if(this.state.inputJogador21 == '' && this.state.inputJogador2 !== 0) {
+
                                     Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador2);
                                     return;
                                 }

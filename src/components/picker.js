@@ -10,6 +10,7 @@ return(
     style={{ 
         borderColor: 'grey', 
         borderWidth: 4,
+        height: 50,
         backgroundColor: 'darkred', 
         color: 'white', 
     }}

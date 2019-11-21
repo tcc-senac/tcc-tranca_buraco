@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         borderColor: 'black', 
         borderWidth: 1, 
-        height: 45,
+        height: 35,
         width: 100,
         fontSize: 18,
         alignSelf: 'center',

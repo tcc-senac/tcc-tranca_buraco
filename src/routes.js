@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import { createStackNavigator, createAppContainer } from "react-navigation"
 
 import Home from "./pages/Home";
-import RegrasJogo from "./pages/RegrasJogo";
-// import PontosTrio from "./pages/PontosTrio";
 import TelaJogo from "./pages/TelaJogo";
-import RegrasBuraco from "./pages/RegrasBuraco";
+import RegrasJogo from "./pages/RegrasJogo";
 
 const AppNavigator = createStackNavigator({
     Home: {
@@ -14,15 +12,9 @@ const AppNavigator = createStackNavigator({
     TelaJogo: {
         screen: TelaJogo
     }, 
-    // PontosTrio: {
-    //     screen: PontosTrio
-    // }, 
     RegrasJogo: {
         screen: RegrasJogo
     },
-    RegrasBuraco: {
-        screen: RegrasBuraco
-    },   
 }, {
     defaultNavigationOptions:{
         headerStyle: {

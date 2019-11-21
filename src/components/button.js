@@ -16,7 +16,7 @@ const button = (props) =>
                 justifyContent: 'center',
                 backgroundColor: 'darkred',
                 borderColor: 'grey',
-                // borderWidth: 4,
+                borderWidth: 0,
             }}
         >
             <Text style={{
@@ -29,6 +29,5 @@ const button = (props) =>
         </TouchableOpacity>
     )
 }
-
 
 export default button;

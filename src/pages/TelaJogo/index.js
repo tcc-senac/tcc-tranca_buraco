@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Alert, ScrollView, StyleSheet } from 'react-native';
+import { Modal, View, Text, TextInput, Alert, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import Button from '../../components/button';
 import CustomPicker from '../../components/picker';
@@ -28,6 +28,7 @@ export default class TelaJogo extends Component{
             historicoJogador2: []
         }
     }
+
     static navigationOptions = {
         title: 'MARCANDO OS PONTOS'
     };
@@ -108,7 +109,7 @@ export default class TelaJogo extends Component{
 
                                 // VERIFICA SE SETOU JOGADOR
                                 if(this.state.inputJogador1 == 1){
-                                    Alert.alert("Por favor definir de quem são estes pontos antes de registrar os pontos!");
+                                    Alert.alert("Por favor definir de quem são estes pontos!");
                                     return;
                                 }
 
@@ -120,6 +121,12 @@ export default class TelaJogo extends Component{
 
                                 //NÃO COMPUTA NAN  
                                 if(isNaN(this.state.inputJogador1)){
+                                    Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador1);
+                                    return;
+                                }
+                                
+                                //NÃO COMPUTA VAZIO  
+                                if(this.state.inputJogador1==" "){
                                     Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador1);
                                     return;
                                 }
@@ -216,6 +223,13 @@ export default class TelaJogo extends Component{
 
                         <Button txt="Somar os pontos" onPress={() => {
 
+                                // VERIFICA SE SETOU JOGADOR
+                                if(this.state.inputJogador2 == 1){
+                                    Alert.alert("Por favor definir de quem são estes pontos!");
+                                    return;
+                                }
+
+
                                 //VERIFICA SE EXISTE PONTUAÇÃO MAXIMA
                                 if(this.state.pontuacaoMaxima == 0) {
                                     Alert.alert("Por favor definir a PONTUAÇÃO MÁXIMA!");
@@ -228,6 +242,12 @@ export default class TelaJogo extends Component{
                                     return;
                                 }
                                 
+                                //NÃO COMPUTA VAZIO  
+                                if(this.state.inputJogador2 == " "){
+                                    Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador2);
+                                    return;
+                                }
+
                                 //ADICIONAR OS PONTOS NO HISTORICO
                                 var pontos = this.state.historicoJogador2;
                                 pontos.push(parseInt(this.state.inputJogador2));
@@ -296,9 +316,27 @@ export default class TelaJogo extends Component{
                 {/* POG */}
                 <Text>  </Text>
                 <Text>  </Text>
-                <Button txt="NOVA PARTIDA" onPress={ () => this.resetarJogo() } />
+
+                {/* BOTÃO PARA REINICIAR A PARTIDA */}
+                <Button txt="NOVA PARTIDA" 
+                    onPress={ () =>{
+                        Alert.alert("Boa sorte na nova partida!");
+                        this.resetarJogo() } 
+                } />
+
+                {/* TENTATIVA DE BOTÃO PARA REINICIAR A PARTIDA COM CONFIRMAÇÃO
+                <Button txt="NOVA PARTIDA" 
+                    onPress={ () =>{
+                        Alert.alert('Alert message here...',
+                        [
+                          {text: 'NO', onPress: () => console.warn('NO Pressed'), style: 'cancel'},
+                          {text: 'YES', onPress: () => console.warn('YES Pressed')},
+                        ]);
+                    this.resetarJogo() } 
+                } /> */}
+
             </View>
-            </ScrollView>
+            </ScrollView> 
         )
     }
 }

@@ -126,10 +126,10 @@ export default class TelaJogo extends Component{
                                 }
                                 
                                 //NÃO COMPUTA VAZIO  
-                                if(this.state.inputJogador1==" "){
-                                    Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador1);
-                                    return;
-                                }
+                                // if(this.state.inputJogador1==" "){
+                                //     Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador1);
+                                //     return;
+                                // }
                                 
                                 //ADICIONA NO HISTORICO
                                 var pontos = this.state.historicoJogador1;
@@ -243,10 +243,10 @@ export default class TelaJogo extends Component{
                                 }
                                 
                                 //NÃO COMPUTA VAZIO  
-                                if(this.state.inputJogador2 == " "){
-                                    Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador2);
-                                    return;
-                                }
+                                // if(this.state.inputJogador2 == " "){
+                                //     Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador2);
+                                //     return;
+                                // }
 
                                 //ADICIONAR OS PONTOS NO HISTORICO
                                 var pontos = this.state.historicoJogador2;

@@ -74,7 +74,16 @@ export default class TelaJogo extends Component{
                 />
                 <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred' }}>Clicar 2 vezes em INICIAR</Text>
 
-                <Button txt="INICIAR" onPress={() => this.setState({ maximoDisabled: false })}/>
+                <Button 
+                    txt="INICIAR" 
+                    onPress={() => {
+                        if(this.state.inputMaxima <= 0){
+                            Alert.alert("Por favor, digite um valor válido");
+                            return;
+                        }
+                        this.setState({ maximoDisabled: false })
+                    }}
+                />
 
                 <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred', padding: 0, margin: 10, marginBottom: 0 }}>Definir os jogadores</Text>
                 <View style={styles.containerPontuacao}>
@@ -88,7 +97,7 @@ export default class TelaJogo extends Component{
                         }
 
                         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }}/>
-                        <Text style={{ textAlign: 'center', color: 'darkred', fontWeight: 'bold'  }}>TOTAL: {this.state.pontosJogador1}</Text>
+                        <Text style={{ textAlign: 'center', color: 'darkred', fontWeight: 'bold' }}>TOTAL: {this.state.pontosJogador1}</Text>
                         <TextInput onChangeText={(txt) => {
                                 this.setState({ inputJogador1: parseInt(txt) }); 
                             }}
@@ -99,14 +108,20 @@ export default class TelaJogo extends Component{
 
                         <Button txt="Somar os pontos" onPress={() => {
 
+                                // VERIFICA SE SETOU JOGADOR
+                                if(this.state.inputJogador1 == 1){
+                                    Alert.alert("Por favor definir de quem são estes pontos antes de registrar os pontos!");
+                                    return;
+                                }
+
                                 //VERIFICA SE EXISTE PONTUAÇÃO MAXIMA
                                 if (this.state.pontuacaoMaxima == 0) {
                                     Alert.alert("Por favor definir a PONTUAÇÃO MÁXIMA!");
                                     return;
                                 }
 
-                                //NÃO COMPUTA O CAMPO VAZIO  
-                                if(this.state.inputJogador1 == '') {
+                                //NÃO COMPUTA O CAMPO VAZIO ou NAN  
+                                if(isNaN(this.state.inputJogador1)){                                    
                                     Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador1);
                                     return;
                                 }
@@ -208,9 +223,9 @@ export default class TelaJogo extends Component{
                                     Alert.alert("Por favor definir a PONTUAÇÃO MÁXIMA!");
                                     return;
                                 }
-
-                                //NÃO COMPUTA O CAMPO VAZIO  
-                                if(this.state.inputJogador2 == '') {
+                                
+                                //NÃO COMPUTA O CAMPO VAZIO ou NAN  
+                                if(isNaN(this.state.inputJogador2)){                                    
                                     Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador2);
                                     return;
                                 }

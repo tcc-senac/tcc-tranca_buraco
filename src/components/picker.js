@@ -8,20 +8,20 @@ const { selectedValue, onValueChange } = props;
 return(
     <Picker
     style={{ 
-        borderColor: 'grey', 
+        // borderColor: 'grey', 
         borderWidth: 4,
         backgroundColor: 'darkred', 
         color: 'white', 
     }}
     selectedValue={selectedValue}
     onValueChange={onValueChange}>
-        <Picker.Item label="▼ definir jogador(es)" value="" />
-        <Picker.Item label="Eu" value="Eu" />
-        <Picker.Item label="Nós" value="Nos" />
-        <Picker.Item label="Ela" value="Ela" />
+        <Picker.Item label="▼ definir jogador(es)" value="1" />
+        <Picker.Item label="Nós" value="Nós" />
         <Picker.Item label="Elas" value="Elas" />
-        <Picker.Item label="Ele" value="Ele" />
         <Picker.Item label="Eles" value="Eles" />
+        <Picker.Item label="Eu" value="Eu" />
+        <Picker.Item label="Ela" value="Ela" />
+        <Picker.Item label="Ele" value="Ele" />
     </Picker>
 )
 }

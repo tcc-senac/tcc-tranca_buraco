@@ -105,10 +105,10 @@ export default class TelaJogo extends Component{
                             keyboardType="phone-pad"   
                         />
 
-                        <Button txt="Somar os pontos" onPress={() => {
+                        <Button txt="Somar pontos desta mão" style={{ alignSelf: 'center', textAlign: 'center', justifyContent: 'center', margin: 5, padding: 5, fontSize: 12, }} onPress={() => {
 
                                 // VERIFICA SE SETOU JOGADOR
-                                if(this.state.inputJogador1 == 1){
+                                if(this.state.apelidoJogador1 == 1){
                                     Alert.alert("Por favor definir de quem são estes pontos!");
                                     return;
                                 }
@@ -224,7 +224,7 @@ export default class TelaJogo extends Component{
                         <Button txt="Somar os pontos" onPress={() => {
 
                                 // VERIFICA SE SETOU JOGADOR
-                                if(this.state.inputJogador2 == 1){
+                                if(this.state.apelidoJogador2 == 1){
                                     Alert.alert("Por favor definir de quem são estes pontos!");
                                     return;
                                 }

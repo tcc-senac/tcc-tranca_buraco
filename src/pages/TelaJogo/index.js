@@ -11,12 +11,12 @@ export default class TelaJogo extends Component{
         super(props);
 
         this.state = {
-            inputMaxima: "",
+            inputMaxima: " ",
             maximoDisabled: true,
-            pontuacaoMaxima: "",
+            pontuacaoMaxima: " ",
 
-            inputJogador1: "",
-            inputJogador2: "",
+            inputJogador1: " ",
+            inputJogador2: " ",
 
             pontosJogador1: 0,
             pontosJogador1Restantes: 0,
@@ -26,8 +26,6 @@ export default class TelaJogo extends Component{
 
             historicoJogador1: [],
             historicoJogador2: []
-
-
         }
     }
     static navigationOptions = {
@@ -36,12 +34,12 @@ export default class TelaJogo extends Component{
 
     resetarJogo = () => {
         this.setState({
-            inputMaxima: "",
+            inputMaxima: " ",
             maximoDisabled: true,
-            pontuacaoMaxima: "",
+            pontuacaoMaxima: " ",
 
-            inputJogador1: "",
-            inputJogador2: "",
+            inputJogador1: " ",
+            inputJogador2: " ",
 
             pontosJogador1: 0,
             pontosJogador1Restantes: 0,
@@ -115,17 +113,17 @@ export default class TelaJogo extends Component{
                                 }
 
                                 //VERIFICA SE EXISTE PONTUAÇÃO MAXIMA
-                                if (this.state.pontuacaoMaxima == 0) {
+                                if(this.state.pontuacaoMaxima == 0) {
                                     Alert.alert("Por favor definir a PONTUAÇÃO MÁXIMA!");
                                     return;
                                 }
 
-                                //NÃO COMPUTA O CAMPO VAZIO ou NAN  
-                                if(isNaN(this.state.inputJogador1)){                                    
-                                    Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador1);
+                                //NÃO COMPUTA NAN  
+                                if(isNaN(this.state.inputJogador1)){
+                                    Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador1);
                                     return;
                                 }
-
+                                
                                 //ADICIONA NO HISTORICO
                                 var pontos = this.state.historicoJogador1;
                                 pontos.push(parseInt(this.state.inputJogador1));
@@ -149,13 +147,13 @@ export default class TelaJogo extends Component{
                                         this.setState({ 
                                             inputJogador1: '',
                                         });
-                                        Alert.alert("Parabéns! "+this.state.apelidoJogador1+" ganhou!");
+                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador1+" ganhou!");
                                         return;
                                     } else {
                                         this.setState({ 
                                             inputJogador1: '',
                                         });
-                                        Alert.alert("Parabéns! "+this.state.apelidoJogador2+" ganhou!");
+                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador2+" ganhou!");
                                         return;
                                     }
                                 }
@@ -170,13 +168,13 @@ export default class TelaJogo extends Component{
                                         this.setState({ 
                                             inputJogador1: '',
                                         });
-                                        Alert.alert("Parabéns! "+this.state.apelidoJogador2+" ganhou!");
+                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador2+" ganhou!");
                                         return;
                                     } else {
                                         this.setState({ 
                                             inputJogador1: '',
                                         });
-                                        Alert.alert("Parabéns! "+this.state.apelidoJogador1+" ganhou!");
+                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador1+" ganhou!");
                                         return;
                                     }
                                 }
@@ -219,17 +217,17 @@ export default class TelaJogo extends Component{
                         <Button txt="Somar os pontos" onPress={() => {
 
                                 //VERIFICA SE EXISTE PONTUAÇÃO MAXIMA
-                                if (this.state.pontuacaoMaxima == 0) {
+                                if(this.state.pontuacaoMaxima == 0) {
                                     Alert.alert("Por favor definir a PONTUAÇÃO MÁXIMA!");
                                     return;
                                 }
                                 
-                                //NÃO COMPUTA O CAMPO VAZIO ou NAN  
-                                if(isNaN(this.state.inputJogador2)){                                    
-                                    Alert.alert("Por favor preencha a pontuação de "+this.state.apelidoJogador2);
+                                //NÃO COMPUTA NAN  
+                                if(isNaN(this.state.inputJogador2)){
+                                    Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador2);
                                     return;
                                 }
-
+                                
                                 //ADICIONAR OS PONTOS NO HISTORICO
                                 var pontos = this.state.historicoJogador2;
                                 pontos.push(parseInt(this.state.inputJogador2));
@@ -252,13 +250,13 @@ export default class TelaJogo extends Component{
                                         this.setState({ 
                                             inputJogador2: '',
                                         });
-                                        Alert.alert("Parabéns! "+this.state.apelidoJogador2+" ganhou!");
+                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador2+" ganhou!");
                                         return;
                                     } else {
                                         this.setState({ 
                                             inputJogador2: '',
                                         });
-                                        Alert.alert("Parabéns! "+this.state.apelidoJogador1+" ganhou!");
+                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador1+" ganhou!");
                                         return;
                                     }
                                 }
@@ -273,13 +271,13 @@ export default class TelaJogo extends Component{
                                         this.setState({ 
                                             inputJogador2: '',
                                         });
-                                        Alert.alert("Parabéns! "+this.state.apelidoJogador1+" ganhou!");
+                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador1+" ganhou!");
                                         return;
                                     } else {
                                         this.setState({ 
                                             inputJogador2: '',
                                         });
-                                        Alert.alert("Parabéns! "+this.state.apelidoJogador2+" ganhou!");
+                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador2+" ganhou!");
                                         return;
                                     }
                                 }

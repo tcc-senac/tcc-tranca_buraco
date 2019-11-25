@@ -105,7 +105,7 @@ export default class TelaJogo extends Component{
                             keyboardType="phone-pad"   
                         />
 
-                        <Button txt="Somar pontos desta mão" style={{ alignSelf: 'center', textAlign: 'center', justifyContent: 'center', margin: 5, padding: 5, fontSize: 12, }} onPress={() => {
+                        <Button txt="Somar os pontos" style={{ alignSelf: 'center', textAlign: 'center', justifyContent: 'center', margin: 5, padding: 5, fontSize: 12, }} onPress={() => {
 
                                 // VERIFICA SE SETOU JOGADOR
                                 if(this.state.apelidoJogador1 == 1){
@@ -317,24 +317,29 @@ export default class TelaJogo extends Component{
                 <Text>  </Text>
                 <Text>  </Text>
 
-                {/* BOTÃO PARA REINICIAR A PARTIDA */}
+                {/* BOTÃO PARA REINICIAR A PARTIDA
                 <Button txt="NOVA PARTIDA" 
                     onPress={ () =>{
                         Alert.alert("Boa sorte na nova partida!");
                         this.resetarJogo() } 
-                } />
-
-                {/* TENTATIVA DE BOTÃO PARA REINICIAR A PARTIDA COM CONFIRMAÇÃO
-                <Button txt="NOVA PARTIDA" 
-                    onPress={ () =>{
-                        Alert.alert('Alert message here...',
-                        [
-                          {text: 'NO', onPress: () => console.warn('NO Pressed'), style: 'cancel'},
-                          {text: 'YES', onPress: () => console.warn('YES Pressed')},
-                        ]);
-                    this.resetarJogo() } 
                 } /> */}
 
+                {/* TENTATIVA DE BOTÃO PARA REINICIAR A PARTIDA COM CONFIRMAÇÃO */}
+                <Button txt="NOVA PARTIDA" 
+                    onPress={ () =>{
+                        Alert.alert(
+                            'Alert Title',
+                            'Deseja iniciar uma nova partida?',
+                            [
+                            //   {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+                              {text: 'Cancela', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                              {text: 'OK', onPress: () => console.log('OK Pressed')},
+                            ],
+                            { cancelable: false }
+                        )
+                        this.resetarJogo() 
+                    } 
+                } />
             </View>
             </ScrollView> 
         )

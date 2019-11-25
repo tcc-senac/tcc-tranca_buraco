@@ -328,16 +328,14 @@ export default class TelaJogo extends Component{
                 <Button txt="NOVA PARTIDA" 
                     onPress={ () =>{
                         Alert.alert(
-                            'Alert Title',
                             'Deseja iniciar uma nova partida?',
+                            'Boa sorte!',
                             [
-                            //   {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
                               {text: 'Cancela', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                              {text: 'OK', onPress: () => console.log('OK Pressed')},
+                              {text: 'OK', onPress: () => this.resetarJogo() },
                             ],
                             { cancelable: false }
-                        )
-                        this.resetarJogo() 
+                        )                        
                     } 
                 } />
             </View>

@@ -15,8 +15,8 @@ export default class TelaJogo extends Component{
             maximoDisabled: true,
             pontuacaoMaxima: " ",
 
-            inputJogador1: " ",
-            inputJogador2: " ",
+            inputJogador1: 0,
+            inputJogador2: 0,
 
             pontosJogador1: 0,
             pontosJogador1Restantes: 0,
@@ -87,7 +87,12 @@ export default class TelaJogo extends Component{
                 <Text style={{ textAlign: "center", fontSize: 18, color: 'darkred', padding: 0, margin: 10, marginBottom: 0 }}>Definir os jogadores</Text>
                 <View style={styles.containerPontuacao}>
                     <View style={styles.containerJogador1}>
-                        <CustomPicker selectedValue={this.state.apelidoJogador1} onValueChange={(itemValue, itemIndex) => this.setState({apelidoJogador1: itemValue})} />
+                        <CustomPicker 
+                            selectedValue={this.state.apelidoJogador1} 
+                            onValueChange={(itemValue, itemIndex) => 
+                                this.setState({apelidoJogador1: itemValue})}
+
+                        />
                         {   
                             this.state.historicoJogador1 && this.state.historicoJogador1.map((item) => (
                                 <Text style={{ textAlign: 'center' }}>{item}</Text>
@@ -96,7 +101,8 @@ export default class TelaJogo extends Component{
                         }
 
                         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }}/>
-                        <Text style={{ textAlign: 'center', color: 'darkred', fontWeight: 'bold' }}>TOTAL: {this.state.pontosJogador1}</Text>
+                        <Text style={{ textAlign: 'center', color: 'darkred', fontSize: 20 }}>Total</Text>
+                        <Text style={{ textAlign: 'center', color: 'darkred', fontWeight: 'bold', fontSize: 30 }}> {this.state.pontosJogador1}</Text>
                         <TextInput onChangeText={(txt) => {
                                 this.setState({ inputJogador1: parseInt(txt) }); 
                             }}
@@ -108,10 +114,10 @@ export default class TelaJogo extends Component{
                         <Button txt="Somar os pontos" style={{ alignSelf: 'center', textAlign: 'center', justifyContent: 'center', margin: 5, padding: 5, fontSize: 12, }} onPress={() => {
 
                                 // VERIFICA SE SETOU JOGADOR
-                                if(this.state.apelidoJogador1 == 1){
-                                    Alert.alert("Por favor definir de quem são estes pontos!");
-                                    return;
-                                }
+                                // if(this.setState({apelidoJogador1(this.state.itemValue)}) == 1){
+                                //     Alert.alert("Por favor definir de quem são estes pontos!");
+                                //     return;
+                                // }
 
                                 //VERIFICA SE EXISTE PONTUAÇÃO MAXIMA
                                 if(this.state.pontuacaoMaxima == 0) {
@@ -126,10 +132,10 @@ export default class TelaJogo extends Component{
                                 }
                                 
                                 //NÃO COMPUTA VAZIO  
-                                // if(this.state.inputJogador1==" "){
-                                //     Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador1);
-                                //     return;
-                                // }
+                                if(this.state.inputJogador1==""){
+                                    Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador1);
+                                    return;
+                                }
                                 
                                 //ADICIONA NO HISTORICO
                                 var pontos = this.state.historicoJogador1;
@@ -154,13 +160,13 @@ export default class TelaJogo extends Component{
                                         this.setState({ 
                                             inputJogador1: '',
                                         });
-                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador1+" ganhou!");
+                                        Alert.alert("Parabéns! "+this.state.apelidoJogador1+" ganhou!");
                                         return;
                                     } else {
                                         this.setState({ 
                                             inputJogador1: '',
                                         });
-                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador2+" ganhou!");
+                                        Alert.alert("Parabéns! "+this.state.apelidoJogador2+" ganhou!");
                                         return;
                                     }
                                 }
@@ -175,13 +181,13 @@ export default class TelaJogo extends Component{
                                         this.setState({ 
                                             inputJogador1: '',
                                         });
-                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador2+" ganhou!");
+                                        Alert.alert("Parabéns! "+this.state.apelidoJogador2+" ganhou!");
                                         return;
                                     } else {
                                         this.setState({ 
                                             inputJogador1: '',
                                         });
-                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador1+" ganhou!");
+                                        Alert.alert("Parabéns! "+this.state.apelidoJogador1+" ganhou!");
                                         return;
                                     }
                                 }
@@ -212,7 +218,8 @@ export default class TelaJogo extends Component{
                         }
                         
                         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }}/>
-                        <Text style={{ textAlign: 'center', color: 'darkred', fontWeight: 'bold' }}>TOTAL: {this.state.pontosJogador2}</Text>
+                        <Text style={{ textAlign: 'center', color: 'darkred', fontSize: 20 }}>Total</Text>
+                        <Text style={{ textAlign: 'center', color: 'darkred', fontWeight: 'bold', fontSize: 30 }}> {this.state.pontosJogador2}</Text>
                         <TextInput onChangeText={(txt) => {
                                 this.setState({ inputJogador2: parseInt(txt) }); 
                             }} 
@@ -223,12 +230,11 @@ export default class TelaJogo extends Component{
 
                         <Button txt="Somar os pontos" onPress={() => {
 
-                                // VERIFICA SE SETOU JOGADOR
-                                if(this.state.apelidoJogador2 == 1){
-                                    Alert.alert("Por favor definir de quem são estes pontos!");
-                                    return;
-                                }
-
+                                // // VERIFICA SE SETOU JOGADOR
+                                // if((this.state.apelidoJogador2(item value) == 1){
+                                //     Alert.alert("Por favor definir de quem são estes pontos!");
+                                //     return;
+                                // }
 
                                 //VERIFICA SE EXISTE PONTUAÇÃO MAXIMA
                                 if(this.state.pontuacaoMaxima == 0) {
@@ -236,17 +242,17 @@ export default class TelaJogo extends Component{
                                     return;
                                 }
                                 
-                                //NÃO COMPUTA NAN  
+                                //NÃO COMPUTA NAN   
                                 if(isNaN(this.state.inputJogador2)){
                                     Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador2);
                                     return;
-                                }
+                                } 
                                 
-                                //NÃO COMPUTA VAZIO  
-                                // if(this.state.inputJogador2 == " "){
-                                //     Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador2);
-                                //     return;
-                                // }
+                                //NÃO COMPUTA VAZIO 
+                                if(this.state.inputJogador2 == ""){
+                                    Alert.alert("Por favor preencha uma pontuação válida para "+this.state.apelidoJogador2);
+                                    return;
+                                }
 
                                 //ADICIONAR OS PONTOS NO HISTORICO
                                 var pontos = this.state.historicoJogador2;
@@ -270,13 +276,13 @@ export default class TelaJogo extends Component{
                                         this.setState({ 
                                             inputJogador2: '',
                                         });
-                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador2+" ganhou!");
+                                        Alert.alert("Parabéns! "+this.state.apelidoJogador2+" ganhou!");
                                         return;
                                     } else {
                                         this.setState({ 
                                             inputJogador2: '',
                                         });
-                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador1+" ganhou!");
+                                        Alert.alert("Parabéns! "+this.state.apelidoJogador1+" ganhou!");
                                         return;
                                     }
                                 }
@@ -291,13 +297,13 @@ export default class TelaJogo extends Component{
                                         this.setState({ 
                                             inputJogador2: '',
                                         });
-                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador1+" ganhou!");
+                                        Alert.alert("Parabéns! "+this.state.apelidoJogador1+" ganhou!");
                                         return;
                                     } else {
                                         this.setState({ 
                                             inputJogador2: '',
                                         });
-                                        Alert.alert("Parabéns! O time "+this.state.apelidoJogador2+" ganhou!");
+                                        Alert.alert("Parabéns! "+this.state.apelidoJogador2+" ganhou!");
                                         return;
                                     }
                                 }
@@ -317,19 +323,12 @@ export default class TelaJogo extends Component{
                 <Text>  </Text>
                 <Text>  </Text>
 
-                {/* BOTÃO PARA REINICIAR A PARTIDA
-                <Button txt="NOVA PARTIDA" 
-                    onPress={ () =>{
-                        Alert.alert("Boa sorte na nova partida!");
-                        this.resetarJogo() } 
-                } /> */}
-
-                {/* TENTATIVA DE BOTÃO PARA REINICIAR A PARTIDA COM CONFIRMAÇÃO */}
+                {/* BOTÃO PARA REINICIAR A PARTIDA COM CONFIRMAÇÃO */}
                 <Button txt="NOVA PARTIDA" 
                     onPress={ () =>{
                         Alert.alert(
                             'Deseja iniciar uma nova partida?',
-                            'Boa sorte!',
+                            '',
                             [
                               {text: 'Cancela', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
                               {text: 'OK', onPress: () => this.resetarJogo() },
